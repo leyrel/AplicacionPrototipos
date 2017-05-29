@@ -1,0 +1,45 @@
+﻿@model Prototipos.Models.ObjectManager.ArchivosProyManager
+
+@{
+    ViewBag.Title = "Archivos del proyecto";
+    int idProy = ViewBag.idProy;
+    WebGrid grid = new WebGrid(Model.archProy(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<div class="center">
+    <div class="title">
+        <h2>@ViewBag.Title</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+            columns: new[] {
+                grid.Column("Nombre", style: "descGrande", header: "Nombre"),
+                grid.Column("Descripcion", style: "descrip2", header: "Descripción"),
+                grid.Column("FechaAdd", style: "fech2", header: "Fecha"),
+                grid.Column("UsuarioAdd", style: "usUlt", header: "Usuario"),
+                grid.Column("", style: "centerOpc", header: "Opciones", 
+                                format: @<text>
+                                            @Html.ActionLink("Ver", "VerArchivoProy", new {Controller = "Files", id = item.IdArch})
+                                            | @Html.ActionLink("Eliminar", "EliminarArchivoProy", new {Controller = "Files", id = item.IdArch})
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>
+
+<div class="center">
+    <a href="@Url.Action("ProyAdjuntar", "Files", new { id = ViewBag.idProy })" class="button6">Adjuntar un archivo</a>
+</div>

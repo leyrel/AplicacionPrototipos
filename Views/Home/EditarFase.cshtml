@@ -1,0 +1,162 @@
+﻿@model Prototipos.Models.ViewModels.EditarFaseView
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Edición de la puesta en marcha";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Inicio gestión proyecto", "GestionProyecto", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Puesta en marcha inicial", "MarchaInicial", new { id = idProy })</li>
+    <li>@Html.ActionLink("Nuevas derivadas", "MarchaDerivadas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desmontaje", "Desmontaje", new { id = idProy })</li>
+</ul>
+<div class="message-success3">
+    @ViewBag.SuccessMessage
+</div>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+<br />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        @Html.HiddenFor(m => m.FaseActual.IdPrototipo)
+        @Html.HiddenFor(m => m.FaseActual.IdFase)
+        @Html.HiddenFor(m => m.FaseActual.EsInicial)
+        @Html.HiddenFor(m => m.FaseActual.FechaInsercion)
+        @Html.HiddenFor(m => m.FaseActual.IdUsuario)
+        @Html.HiddenFor(m => m.FaseActual.Desmontaje)
+        @Html.HiddenFor(m => m.FaseActual.BloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.IdUsuarioBloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.FechaDesbloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.FechaRegistroDesbloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.IdUsuarioDesbloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.RazonDesbloqueoGrua)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaPuestaMarcha)
+        </div>
+        @if (Model.TieneDefFase(Model.FaseActual.IdFase))
+        {
+            
+            <div><i>No se puede modificar la fecha de la puesta en marcha si tiene deficiencias</i></div>
+            <div class="editor-ali">
+                @Html.HiddenFor(m => m.FaseActual.FechaPuestaMarcha)
+                @Html.DisplayFor(model => model.FaseActual.FechaPuestaMarcha, "ShortDateTime")
+            </div>
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FechaPuestaMarcha)
+                @Html.ValidationMessageFor(model => model.FechaPuestaMarcha)
+            </div>
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuario)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usCreador
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfiguracionMontaje)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfiguracionMontaje)
+            @Html.ValidationMessageFor(model => model.ConfiguracionMontaje)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observaciones)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observaciones)
+            @Html.ValidationMessageFor(model => model.Observaciones)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Deficiencia)
+        </div>
+        @if (Model.TieneDefFase(Model.FaseActual.IdFase))
+        {
+            @Html.HiddenFor(m => m.FaseActual.Deficiencia)
+            <div>
+                <div class="float-rightAbajo">
+                    <a href="@Url.Action("NuevaDefPrueba", "Home", new { id = Model.FaseActual.IdFase })" target="_blank" class="button">Nueva deficiencia</a>
+                </div>
+                <div class="editor-ali2">
+                    Sí
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Deficiencia, "YesNoDropDown")
+                @Html.ValidationMessageFor(model => model.Deficiencia)
+            </div>
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BloqueoGrua)
+        </div>
+        @if (Model.BloqueoGrua == true)
+        {
+            <div class="editor-ali">
+                @ViewBag.BloqueoGrua
+            </div>
+            if (Model.IdUsuarioBloqueoGrua != null)
+            {
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IdUsuarioBloqueoGrua)
+                </div>
+                <div class="editor-ali">
+                    @ViewBag.usBloqueoGrua
+                </div>
+            }
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.BloqueoGrua, "BloqueoDropDown")
+            </div>
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SituacionBloqueoGrua) <i>(Sólo si bloquea la KX1953)</i>
+        </div>
+        <div><i>Descripción, tiempo estimado que lo estará...</i></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SituacionBloqueoGrua)
+            @Html.ValidationMessageFor(model => model.SituacionBloqueoGrua)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Editar" />
+        </p>
+    </fieldset>
+}
+<br />
+<br />
+<h5>
+    @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    <span class="float-right">
+        @Html.ActionLink("Atrás a montaje", "Montaje", new { id = idProy })
+    </span>
+</h5>

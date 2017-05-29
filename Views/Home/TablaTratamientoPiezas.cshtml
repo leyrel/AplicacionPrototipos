@@ -1,0 +1,28 @@
+﻿@model Prototipos.Models.ViewModels.DesmontajeView
+
+@{
+    int idFase = ViewBag.idFase;
+    WebGrid grid = new WebGrid(Model.TratamientoPiezas(idFase), defaultSort: "IdPieza", selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<br />
+<div class="center">
+    @grid.GetHtml(
+        fillEmptyRows: true,
+        mode: WebGridPagerModes.All,
+        rowStyle: "fila-normal",
+        alternatingRowStyle: "fila-alternativa",
+        selectedRowStyle: "fila-seleccionada",
+        tableStyle: "tabla-gridPiezas",
+        headerStyle: "encabezado-grid",
+        footerStyle: "pie-grid",
+        firstText: "<< Primera",
+        previousText: "< Anterior",
+        nextText: "Siguiente >",
+        lastText: "Última >>",
+
+        columns: new[] {
+            grid.Column("Articulo", header: "Artículo"),
+            grid.Column("Accion", header: "Acción")
+    })
+</div>

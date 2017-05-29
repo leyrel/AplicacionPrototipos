@@ -1,0 +1,45 @@
+﻿@model Prototipos.Models.ViewModels.PruebaView
+
+@{
+    int idProy = ViewBag.idProy;
+    WebGrid grid = new WebGrid(Model.pruebaUs(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<div class="center">
+    <div class="title">
+        <h2>@ViewBag.Message3</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("FechaPrueba", header: "Fecha", style: "fech"),
+                grid.Column("Usuario", header: "Usuario creación", style: "usCre"),
+                grid.Column("Prueba", header: "Descripción", style: "pro"),
+                grid.Column("tieneArchivos", header: "¿Tiene archivos?", style: "opcArch", 
+                                format: (item) => { if (item.tieneArchivos == "Sí") return Html.ActionLink("Sí => Ver", "PruebaArchivos", new { Controller = "Files", id = item.IdPrueba });
+                                                    else return Html.ActionLink("No => Adjuntar", "PruebaAdjuntar", new { Controller = "Files", id = item.IdPrueba });}),
+                grid.Column("Deficiencia", header: "¿Tiene deficiencias?", style: "opcArch", 
+                                format: (item) => { if (item.Deficiencia == "Sí") return Html.ActionLink("Sí => Ver y Editar", "DefsPrueba", new { Controller = "Files", id = item.IdPrueba });
+                                                    else return Html.ActionLink("No => Añadir", "NuevaDefPrueba", new { id = item.IdPrueba });}),
+                grid.Column("", header: "Opciones", style: "opcArch", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar prueba", "EditarPrueba", new { id = item.IdPrueba })
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>

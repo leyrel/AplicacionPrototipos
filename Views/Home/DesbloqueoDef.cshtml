@@ -1,0 +1,144 @@
+﻿@model Prototipos.Models.ViewModels.DesbloqueoDefView
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Desbloqueo de la deficiencia";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+<br />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        @Html.HiddenFor(m => m.DeficienciaActual.IdPrototipo)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdFase)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdDeficiencia)
+        @Html.HiddenFor(m => m.DeficienciaActual.Fecha)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioCreador)
+        @Html.HiddenFor(m => m.DeficienciaActual.Descripcion)
+        @Html.HiddenFor(m => m.DeficienciaActual.Limitaciones)
+        @Html.HiddenFor(m => m.DeficienciaActual.Bloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaRegistroDesbloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioDesbloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioBloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaResolucion)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaRegistroResolucion)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioResolucion)
+        @Html.HiddenFor(m => m.DeficienciaActual.ObservacionesResolucion)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fecha)
+        </div>
+        <div class="editor-ali">
+            @Html.DisplayFor(model => model.Fecha, "ShortDateTime")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuarioCreador)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usCreador
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-ali">
+            @Model.Descripcion
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Limitaciones)
+        </div>
+        <div class="editor-ali">
+            @Model.Limitaciones
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.Label("Sistemas a los que afecta: ")</b>@Html.EditorFor(model => model.DeficienciaActual, "SistemasListBox")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuarioBloqueo)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usuarioBloq
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bloqueo)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.Bloqueo
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaResolucion)
+        </div>
+        <div class="editor-ali">
+            @Html.DisplayFor(model => model.FechaResolucion, "ShortDateTime")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuarioResolucion)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usuarioRes
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ObservacionesResolucion)
+        </div>
+        <div class="editor-ali">
+            @Model.ObservacionesResolucion
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaDesbloqueo)
+        </div>
+        <div class="editor-fecha">
+            @Html.EditorFor(model => model.FechaDesbloqueo)
+            @Html.ValidationMessageFor(model => model.FechaDesbloqueo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RazonDesbloqueo)
+        </div>
+        <div><i>Introducir las razones por las que se elimina el bloqueo</i></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RazonDesbloqueo)
+            @Html.ValidationMessageFor(model => model.RazonDesbloqueo)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Desbloquear" />
+        </p>
+    </fieldset>
+}
+<br />
+<br />
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    </span>
+</h5>

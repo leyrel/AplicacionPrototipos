@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Deficiencia creada con éxito";
+    int idProy = ViewBag.idProy;
+    int idFase = ViewBag.idFase;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Inicio gestión proyecto", "GestionProyecto", new { id = idProy })</li>
+    <li>@Html.ActionLink("Inicio montaje", "Montaje", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Puesta en marcha", "Marcha", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desmontaje", "Desmontaje", new { id = idProy })</li>
+</ul>
+<br />
+<div class="center">
+    <div class="titleOk">
+        <h1>@ViewBag.Title</h1>
+    </div>
+</div>
+<br />
+<div class="message-aviso2">
+    @ViewBag.AvisoMessage
+</div>
+<br /><br />
+<div class="center">
+    <table id="tablaSin">
+        <tr>
+            <td>
+                <a href="@Url.Action("GestionProyecto", "Home", new { id = idProy })" class="button3">Volver a gestión proyecto</a>
+            </td>
+            <td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                <a href="@Url.Action("NuevaDeficiencia", "Home", new {id = idFase })" class="button3">&nbsp Añadir más deficiencias &nbsp</a>
+            </td>
+        </tr> 
+    </table>
+    <br /><br /><br />
+</div>

@@ -1,0 +1,124 @@
+﻿@model Prototipos.Models.ViewModels.DesbloqueoGruaView
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Desbloqueo de la puesta en marcha";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<div class="message-success3">
+    @ViewBag.SuccessMessage
+</div>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+<br />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        @Html.HiddenFor(m => m.FaseActual.IdPrototipo)
+        @Html.HiddenFor(m => m.FaseActual.IdFase)
+        @Html.HiddenFor(m => m.FaseActual.EsInicial)
+        @Html.HiddenFor(m => m.FaseActual.FechaInsercion)
+        @Html.HiddenFor(m => m.FaseActual.FechaPuestaMarcha)
+        @Html.HiddenFor(m => m.FaseActual.IdUsuario)
+        @Html.HiddenFor(m => m.FaseActual.ConfiguracionMontaje)
+        @Html.HiddenFor(m => m.FaseActual.Observaciones)
+        @Html.HiddenFor(m => m.FaseActual.Deficiencia)
+        @Html.HiddenFor(m => m.FaseActual.Desmontaje)
+        @Html.HiddenFor(m => m.FaseActual.BloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.IdUsuarioBloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.SituacionBloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.FechaRegistroDesbloqueoGrua)
+        @Html.HiddenFor(m => m.FaseActual.IdUsuarioDesbloqueoGrua)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaPuestaMarcha)
+        </div>
+        <div class="editor-ali">
+            @Html.DisplayFor(model => model.FechaPuestaMarcha, "ShortDateTime")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuario)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usCreador
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfiguracionMontaje)
+        </div>
+        <div class="editor-ali">
+            @Model.ConfiguracionMontaje
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observaciones)
+        </div>
+        <div class="editor-ali">
+            @Model.Observaciones
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuarioBloqueoGrua)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usBloqueoGrua
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SituacionBloqueoGrua)
+        </div>
+        <div class="editor-ali">
+            @Model.SituacionBloqueoGrua
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaDesbloqueoGrua)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaDesbloqueoGrua)
+            @Html.ValidationMessageFor(model => model.FechaDesbloqueoGrua)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RazonDesbloqueoGrua)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RazonDesbloqueoGrua)
+            @Html.ValidationMessageFor(model => model.RazonDesbloqueoGrua)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Desbloquear" />
+        </p>
+    </fieldset>
+}
+<br />
+<br />
+<h5>
+    @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    <span class="float-right">
+        @Html.ActionLink("Atrás a desbloqueo", "Desbloqueo", new { id = idProy })
+    </span>
+</h5>

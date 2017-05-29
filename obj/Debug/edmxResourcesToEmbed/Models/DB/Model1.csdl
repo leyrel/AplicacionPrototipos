@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrototiposModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PrototiposEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tDeficiencias" EntityType="PrototiposModel.tDeficiencia" />
+    <EntitySet Name="tDeficienciaArchivos" EntityType="PrototiposModel.tDeficienciaArchivo" />
+    <EntitySet Name="tDeficienciaPruArchivos" EntityType="PrototiposModel.tDeficienciaPruArchivo" />
+    <EntitySet Name="tDeficienciaPruebas" EntityType="PrototiposModel.tDeficienciaPrueba" />
+    <EntitySet Name="tFases" EntityType="PrototiposModel.tFase" />
+    <EntitySet Name="tFaseAfectas" EntityType="PrototiposModel.tFaseAfecta" />
+    <EntitySet Name="tFaseArchivos" EntityType="PrototiposModel.tFaseArchivo" />
+    <EntitySet Name="tPrototipos" EntityType="PrototiposModel.tPrototipo" />
+    <EntitySet Name="tPrototipoArchivos" EntityType="PrototiposModel.tPrototipoArchivo" />
+    <EntitySet Name="tPruebas" EntityType="PrototiposModel.tPrueba" />
+    <EntitySet Name="tPruebaAfectas" EntityType="PrototiposModel.tPruebaAfecta" />
+    <EntitySet Name="tPruebaArchivos" EntityType="PrototiposModel.tPruebaArchivo" />
+    <EntitySet Name="tSeguridads" EntityType="PrototiposModel.tSeguridad" />
+    <EntitySet Name="tSistemas" EntityType="PrototiposModel.tSistema" />
+    <EntitySet Name="tTratamientoPiezas" EntityType="PrototiposModel.tTratamientoPieza" />
+    <EntitySet Name="tUsuarios" EntityType="PrototiposModel.tUsuario" />
+    <EntitySet Name="v_defPruebaUsuarios" EntityType="PrototiposModel.v_defPruebaUsuario" />
+    <EntitySet Name="v_defUsuarios" EntityType="PrototiposModel.v_defUsuario" />
+    <EntitySet Name="v_faseAfectaSistemas" EntityType="PrototiposModel.v_faseAfectaSistema" />
+    <EntitySet Name="v_faseDefSinResSistemas" EntityType="PrototiposModel.v_faseDefSinResSistema" />
+    <EntitySet Name="v_faseSinResSistemas" EntityType="PrototiposModel.v_faseSinResSistema" />
+    <EntitySet Name="v_faseUsuarios" EntityType="PrototiposModel.v_faseUsuario" />
+    <EntitySet Name="v_pruebaAfectaSistemas" EntityType="PrototiposModel.v_pruebaAfectaSistema" />
+    <EntitySet Name="v_pruebaDefSinResSistemas" EntityType="PrototiposModel.v_pruebaDefSinResSistema" />
+    <EntitySet Name="v_pruebaSinResSistemas" EntityType="PrototiposModel.v_pruebaSinResSistema" />
+    <EntitySet Name="v_pruebaUsSemanas" EntityType="PrototiposModel.v_pruebaUsSemana" />
+    <EntitySet Name="v_pruebaUsuarios" EntityType="PrototiposModel.v_pruebaUsuario" />
+    <AssociationSet Name="FK_tDeficiencia_tFase" Association="PrototiposModel.FK_tDeficiencia_tFase">
+      <End Role="tFase" EntitySet="tFases" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tPrototipo" Association="PrototiposModel.FK_tDeficiencia_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuario" Association="PrototiposModel.FK_tDeficiencia_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuario1" Association="PrototiposModel.FK_tDeficiencia_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuario2" Association="PrototiposModel.FK_tDeficiencia_tUsuario2">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuarios" Association="PrototiposModel.FK_tDeficiencia_tUsuarios">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaArchivo_tDeficiencia" Association="PrototiposModel.FK_tDeficienciaArchivo_tDeficiencia">
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+      <End Role="tDeficienciaArchivo" EntitySet="tDeficienciaArchivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFaseAfecta_tDeficiencia" Association="PrototiposModel.FK_tFaseAfecta_tDeficiencia">
+      <End Role="tDeficiencia" EntitySet="tDeficiencias" />
+      <End Role="tFaseAfecta" EntitySet="tFaseAfectas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPruArchivo_tDeficienciaPrueba" Association="PrototiposModel.FK_tDeficienciaPruArchivo_tDeficienciaPrueba">
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+      <End Role="tDeficienciaPruArchivo" EntitySet="tDeficienciaPruArchivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tPrototipo" Association="PrototiposModel.FK_tDeficienciaPrueba_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tPrueba" Association="PrototiposModel.FK_tDeficienciaPrueba_tPrueba">
+      <End Role="tPrueba" EntitySet="tPruebas" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario" Association="PrototiposModel.FK_tDeficienciaPrueba_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario1" Association="PrototiposModel.FK_tDeficienciaPrueba_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario2" Association="PrototiposModel.FK_tDeficienciaPrueba_tUsuario2">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario3" Association="PrototiposModel.FK_tDeficienciaPrueba_tUsuario3">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebaAfecta_tDeficienciaPrueba" Association="PrototiposModel.FK_tPruebaAfecta_tDeficienciaPrueba">
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPruebas" />
+      <End Role="tPruebaAfecta" EntitySet="tPruebaAfectas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFase_tUsuario" Association="PrototiposModel.FK_tFase_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tFase" EntitySet="tFases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFase_tUsuario1" Association="PrototiposModel.FK_tFase_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tFase" EntitySet="tFases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFaseArchivo_tFase" Association="PrototiposModel.FK_tFaseArchivo_tFase">
+      <End Role="tFase" EntitySet="tFases" />
+      <End Role="tFaseArchivo" EntitySet="tFaseArchivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tTratamientoPieza_tFase" Association="PrototiposModel.FK_tTratamientoPieza_tFase">
+      <End Role="tFase" EntitySet="tFases" />
+      <End Role="tTratamientoPieza" EntitySet="tTratamientoPiezas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFaseAfecta_tSistema" Association="PrototiposModel.FK_tFaseAfecta_tSistema">
+      <End Role="tSistema" EntitySet="tSistemas" />
+      <End Role="tFaseAfecta" EntitySet="tFaseAfectas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipo_tUsuario" Association="PrototiposModel.FK_tPrototipo_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipo_tUsuario1" Association="PrototiposModel.FK_tPrototipo_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipo_tUsuarios" Association="PrototiposModel.FK_tPrototipo_tUsuarios">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipoArchivo_tPrototipo" Association="PrototiposModel.FK_tPrototipoArchivo_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+      <End Role="tPrototipoArchivo" EntitySet="tPrototipoArchivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrueba_tPrototipo" Association="PrototiposModel.FK_tPrueba_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+      <End Role="tPrueba" EntitySet="tPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSeguridad_tPrototipo" Association="PrototiposModel.FK_tSeguridad_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipos" />
+      <End Role="tSeguridad" EntitySet="tSeguridads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrueba_tUsuarios" Association="PrototiposModel.FK_tPrueba_tUsuarios">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tPrueba" EntitySet="tPruebas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebaArchivo_tPrueba" Association="PrototiposModel.FK_tPruebaArchivo_tPrueba">
+      <End Role="tPrueba" EntitySet="tPruebas" />
+      <End Role="tPruebaArchivo" EntitySet="tPruebaArchivos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebaAfecta_tSistema" Association="PrototiposModel.FK_tPruebaAfecta_tSistema">
+      <End Role="tSistema" EntitySet="tSistemas" />
+      <End Role="tPruebaAfecta" EntitySet="tPruebaAfectas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSeguridad_tUsuario" Association="PrototiposModel.FK_tSeguridad_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuarios" />
+      <End Role="tSeguridad" EntitySet="tSeguridads" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tDeficiencia">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="IdUsuarioCreador" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Limitaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Bloqueo" Type="Boolean" Nullable="false" />
+    <Property Name="FechaDesbloqueo" Type="DateTime" />
+    <Property Name="FechaRegistroDesbloqueo" Type="DateTime" />
+    <Property Name="IdUsuarioDesbloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IdUsuarioBloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RazonDesbloqueo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FechaResolucion" Type="DateTime" />
+    <Property Name="FechaRegistroResolucion" Type="DateTime" />
+    <Property Name="IdUsuarioResolucion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesResolucion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tFase" Relationship="PrototiposModel.FK_tDeficiencia_tFase" FromRole="tDeficiencia" ToRole="tFase" />
+    <NavigationProperty Name="tPrototipo" Relationship="PrototiposModel.FK_tDeficiencia_tPrototipo" FromRole="tDeficiencia" ToRole="tPrototipo" />
+    <NavigationProperty Name="tUsuario" Relationship="PrototiposModel.FK_tDeficiencia_tUsuario" FromRole="tDeficiencia" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario1" Relationship="PrototiposModel.FK_tDeficiencia_tUsuario1" FromRole="tDeficiencia" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario2" Relationship="PrototiposModel.FK_tDeficiencia_tUsuario2" FromRole="tDeficiencia" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario3" Relationship="PrototiposModel.FK_tDeficiencia_tUsuarios" FromRole="tDeficiencia" ToRole="tUsuario" />
+    <NavigationProperty Name="tDeficienciaArchivos" Relationship="PrototiposModel.FK_tDeficienciaArchivo_tDeficiencia" FromRole="tDeficiencia" ToRole="tDeficienciaArchivo" />
+    <NavigationProperty Name="tFaseAfectas" Relationship="PrototiposModel.FK_tFaseAfecta_tDeficiencia" FromRole="tDeficiencia" ToRole="tFaseAfecta" />
+  </EntityType>
+  <EntityType Name="tDeficienciaArchivo">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdDeficiencia" Type="Int32" Nullable="false" />
+    <Property Name="IdArch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Lenght" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Contenido" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FechaAdd" Type="DateTime" />
+    <Property Name="UsuarioAdd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficiencia" Relationship="PrototiposModel.FK_tDeficienciaArchivo_tDeficiencia" FromRole="tDeficienciaArchivo" ToRole="tDeficiencia" />
+  </EntityType>
+  <EntityType Name="tDeficienciaPruArchivo">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdDeficiencia" Type="Int32" Nullable="false" />
+    <Property Name="IdArch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Lenght" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Contenido" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FechaAdd" Type="DateTime" />
+    <Property Name="UsuarioAdd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficienciaPrueba" Relationship="PrototiposModel.FK_tDeficienciaPruArchivo_tDeficienciaPrueba" FromRole="tDeficienciaPruArchivo" ToRole="tDeficienciaPrueba" />
+  </EntityType>
+  <EntityType Name="tDeficienciaPrueba">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="IdUsuarioCreador" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Limitaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Bloqueo" Type="Boolean" Nullable="false" />
+    <Property Name="FechaDesbloqueo" Type="DateTime" />
+    <Property Name="FechaRegistroDesbloqueo" Type="DateTime" />
+    <Property Name="IdUsuarioDesbloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IdUsuarioBloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RazonDesbloqueo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FechaResolucion" Type="DateTime" />
+    <Property Name="FechaRegistroResolucion" Type="DateTime" />
+    <Property Name="IdUsuarioResolucion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesResolucion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficienciaPruArchivos" Relationship="PrototiposModel.FK_tDeficienciaPruArchivo_tDeficienciaPrueba" FromRole="tDeficienciaPrueba" ToRole="tDeficienciaPruArchivo" />
+    <NavigationProperty Name="tPrototipo" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tPrototipo" FromRole="tDeficienciaPrueba" ToRole="tPrototipo" />
+    <NavigationProperty Name="tPrueba" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tPrueba" FromRole="tDeficienciaPrueba" ToRole="tPrueba" />
+    <NavigationProperty Name="tUsuario" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario" FromRole="tDeficienciaPrueba" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario1" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario1" FromRole="tDeficienciaPrueba" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario2" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario2" FromRole="tDeficienciaPrueba" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario3" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario3" FromRole="tDeficienciaPrueba" ToRole="tUsuario" />
+    <NavigationProperty Name="tPruebaAfectas" Relationship="PrototiposModel.FK_tPruebaAfecta_tDeficienciaPrueba" FromRole="tDeficienciaPrueba" ToRole="tPruebaAfecta" />
+  </EntityType>
+  <EntityType Name="tFase">
+    <Key>
+      <PropertyRef Name="IdFase" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EsInicial" Type="Boolean" Nullable="false" />
+    <Property Name="FechaInsercion" Type="DateTime" Nullable="false" />
+    <Property Name="FechaPuestaMarcha" Type="DateTime" />
+    <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ConfiguracionMontaje" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Deficiencia" Type="Boolean" Nullable="false" />
+    <Property Name="DesmontajeFinal" Type="Boolean" />
+    <Property Name="Desmontaje" Type="Boolean" />
+    <Property Name="FechaDesmontaje" Type="DateTime" />
+    <Property Name="IdUsuarioDesmontaje" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesDesmontaje" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesTratamiento" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="BloqueoGrua" Type="Boolean" Nullable="false" />
+    <Property Name="IdUsuarioBloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SituacionBloqueoGrua" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FechaDesbloqueoGrua" Type="DateTime" />
+    <Property Name="FechaRegistroDesbloqueoGrua" Type="DateTime" />
+    <Property Name="IdUsuarioDesbloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RazonDesbloqueoGrua" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficiencias" Relationship="PrototiposModel.FK_tDeficiencia_tFase" FromRole="tFase" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tUsuario" Relationship="PrototiposModel.FK_tFase_tUsuario" FromRole="tFase" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario1" Relationship="PrototiposModel.FK_tFase_tUsuario1" FromRole="tFase" ToRole="tUsuario" />
+    <NavigationProperty Name="tFaseArchivoes" Relationship="PrototiposModel.FK_tFaseArchivo_tFase" FromRole="tFase" ToRole="tFaseArchivo" />
+    <NavigationProperty Name="tTratamientoPiezas" Relationship="PrototiposModel.FK_tTratamientoPieza_tFase" FromRole="tFase" ToRole="tTratamientoPieza" />
+  </EntityType>
+  <EntityType Name="tFaseAfecta">
+    <Key>
+      <PropertyRef Name="IdDeficienciaFas" />
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdDeficienciaFas" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficiencia" Relationship="PrototiposModel.FK_tFaseAfecta_tDeficiencia" FromRole="tFaseAfecta" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tSistema" Relationship="PrototiposModel.FK_tFaseAfecta_tSistema" FromRole="tFaseAfecta" ToRole="tSistema" />
+  </EntityType>
+  <EntityType Name="tFaseArchivo">
+    <Key>
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="IdArch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Lenght" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Contenido" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FechaAdd" Type="DateTime" />
+    <Property Name="UsuarioAdd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tFase" Relationship="PrototiposModel.FK_tFaseArchivo_tFase" FromRole="tFaseArchivo" ToRole="tFase" />
+  </EntityType>
+  <EntityType Name="tPrototipo">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+    <Property Name="IdUsuarioCreador" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Proyecto" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Responsable" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Configuracion" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="FechaCierre" Type="DateTime" />
+    <Property Name="IdUsuarioCierre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Cierre" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficiencias" Relationship="PrototiposModel.FK_tDeficiencia_tPrototipo" FromRole="tPrototipo" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tDeficienciaPruebas" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tPrototipo" FromRole="tPrototipo" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tUsuario" Relationship="PrototiposModel.FK_tPrototipo_tUsuario" FromRole="tPrototipo" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario1" Relationship="PrototiposModel.FK_tPrototipo_tUsuario1" FromRole="tPrototipo" ToRole="tUsuario" />
+    <NavigationProperty Name="tUsuario2" Relationship="PrototiposModel.FK_tPrototipo_tUsuarios" FromRole="tPrototipo" ToRole="tUsuario" />
+    <NavigationProperty Name="tPrototipoArchivos" Relationship="PrototiposModel.FK_tPrototipoArchivo_tPrototipo" FromRole="tPrototipo" ToRole="tPrototipoArchivo" />
+    <NavigationProperty Name="tPruebas" Relationship="PrototiposModel.FK_tPrueba_tPrototipo" FromRole="tPrototipo" ToRole="tPrueba" />
+    <NavigationProperty Name="tSeguridads" Relationship="PrototiposModel.FK_tSeguridad_tPrototipo" FromRole="tPrototipo" ToRole="tSeguridad" />
+  </EntityType>
+  <EntityType Name="tPrototipoArchivo">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdArch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Lenght" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Contenido" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FechaAdd" Type="DateTime" />
+    <Property Name="UsuarioAdd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tPrototipo" Relationship="PrototiposModel.FK_tPrototipoArchivo_tPrototipo" FromRole="tPrototipoArchivo" ToRole="tPrototipo" />
+  </EntityType>
+  <EntityType Name="tPrueba">
+    <Key>
+      <PropertyRef Name="IdPrueba" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaPrueba" Type="DateTime" />
+    <Property Name="FechaRegistroPrueba" Type="DateTime" Nullable="false" />
+    <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Prueba" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Deficiencia" Type="Boolean" Nullable="false" />
+    <Property Name="BloqueoGrua" Type="Boolean" Nullable="false" />
+    <Property Name="IdUsuarioBloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SituacionBloqueoGrua" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FechaDesbloqueoGrua" Type="DateTime" />
+    <Property Name="FechaRegistroDesbloqueoGrua" Type="DateTime" />
+    <Property Name="IdUsuarioDesbloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RazonDesbloqueoGrua" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficienciaPruebas" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tPrueba" FromRole="tPrueba" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tPrototipo" Relationship="PrototiposModel.FK_tPrueba_tPrototipo" FromRole="tPrueba" ToRole="tPrototipo" />
+    <NavigationProperty Name="tUsuario" Relationship="PrototiposModel.FK_tPrueba_tUsuarios" FromRole="tPrueba" ToRole="tUsuario" />
+    <NavigationProperty Name="tPruebaArchivoes" Relationship="PrototiposModel.FK_tPruebaArchivo_tPrueba" FromRole="tPrueba" ToRole="tPruebaArchivo" />
+  </EntityType>
+  <EntityType Name="tPruebaAfecta">
+    <Key>
+      <PropertyRef Name="IdDeficienciaPru" />
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdDeficienciaPru" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficienciaPrueba" Relationship="PrototiposModel.FK_tPruebaAfecta_tDeficienciaPrueba" FromRole="tPruebaAfecta" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tSistema" Relationship="PrototiposModel.FK_tPruebaAfecta_tSistema" FromRole="tPruebaAfecta" ToRole="tSistema" />
+  </EntityType>
+  <EntityType Name="tPruebaArchivo">
+    <Key>
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="IdArch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Lenght" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Contenido" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FechaAdd" Type="DateTime" />
+    <Property Name="UsuarioAdd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tPrueba" Relationship="PrototiposModel.FK_tPruebaArchivo_tPrueba" FromRole="tPruebaArchivo" ToRole="tPrueba" />
+  </EntityType>
+  <EntityType Name="tSeguridad">
+    <Key>
+      <PropertyRef Name="IdCheckList" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdCheckList" Type="Int32" Nullable="false" />
+    <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SeAcepta" Type="Boolean" />
+    <Property Name="item1" Type="Boolean" />
+    <Property Name="item2" Type="Boolean" />
+    <Property Name="item3" Type="Boolean" />
+    <Property Name="item4" Type="Boolean" />
+    <Property Name="item5" Type="Boolean" />
+    <Property Name="item6" Type="Boolean" />
+    <Property Name="item7" Type="Boolean" />
+    <Property Name="item8" Type="Boolean" />
+    <Property Name="item9" Type="Boolean" />
+    <Property Name="item10" Type="Boolean" />
+    <Property Name="item11" Type="Boolean" />
+    <Property Name="item12" Type="Boolean" />
+    <Property Name="item13" Type="Boolean" />
+    <Property Name="item14" Type="Boolean" />
+    <Property Name="item15" Type="Boolean" />
+    <Property Name="item16" Type="Boolean" />
+    <Property Name="prohib1" Type="Boolean" />
+    <Property Name="prohib2" Type="Boolean" />
+    <Property Name="prohib3" Type="Boolean" />
+    <NavigationProperty Name="tPrototipo" Relationship="PrototiposModel.FK_tSeguridad_tPrototipo" FromRole="tSeguridad" ToRole="tPrototipo" />
+    <NavigationProperty Name="tUsuario" Relationship="PrototiposModel.FK_tSeguridad_tUsuario" FromRole="tSeguridad" ToRole="tUsuario" />
+  </EntityType>
+  <EntityType Name="tSistema">
+    <Key>
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdSistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+    <NavigationProperty Name="tFaseAfectas" Relationship="PrototiposModel.FK_tFaseAfecta_tSistema" FromRole="tSistema" ToRole="tFaseAfecta" />
+    <NavigationProperty Name="tPruebaAfectas" Relationship="PrototiposModel.FK_tPruebaAfecta_tSistema" FromRole="tSistema" ToRole="tPruebaAfecta" />
+  </EntityType>
+  <EntityType Name="tTratamientoPieza">
+    <Key>
+      <PropertyRef Name="IdPieza" />
+    </Key>
+    <Property Name="IdPieza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="Articulo" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Accion" Type="String" Nullable="false" MaxLength="2500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tFase" Relationship="PrototiposModel.FK_tTratamientoPieza_tFase" FromRole="tTratamientoPieza" ToRole="tFase" />
+  </EntityType>
+  <EntityType Name="tUsuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Departamento" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tDeficiencias" Relationship="PrototiposModel.FK_tDeficiencia_tUsuario" FromRole="tUsuario" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tDeficiencias1" Relationship="PrototiposModel.FK_tDeficiencia_tUsuario1" FromRole="tUsuario" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tDeficiencias2" Relationship="PrototiposModel.FK_tDeficiencia_tUsuario2" FromRole="tUsuario" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tDeficiencias3" Relationship="PrototiposModel.FK_tDeficiencia_tUsuarios" FromRole="tUsuario" ToRole="tDeficiencia" />
+    <NavigationProperty Name="tDeficienciaPruebas" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario" FromRole="tUsuario" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tDeficienciaPruebas1" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario1" FromRole="tUsuario" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tDeficienciaPruebas2" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario2" FromRole="tUsuario" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tDeficienciaPruebas3" Relationship="PrototiposModel.FK_tDeficienciaPrueba_tUsuario3" FromRole="tUsuario" ToRole="tDeficienciaPrueba" />
+    <NavigationProperty Name="tFases" Relationship="PrototiposModel.FK_tFase_tUsuario" FromRole="tUsuario" ToRole="tFase" />
+    <NavigationProperty Name="tFases1" Relationship="PrototiposModel.FK_tFase_tUsuario1" FromRole="tUsuario" ToRole="tFase" />
+    <NavigationProperty Name="tPrototipos" Relationship="PrototiposModel.FK_tPrototipo_tUsuario" FromRole="tUsuario" ToRole="tPrototipo" />
+    <NavigationProperty Name="tPrototipos1" Relationship="PrototiposModel.FK_tPrototipo_tUsuario1" FromRole="tUsuario" ToRole="tPrototipo" />
+    <NavigationProperty Name="tPrototipos2" Relationship="PrototiposModel.FK_tPrototipo_tUsuarios" FromRole="tUsuario" ToRole="tPrototipo" />
+    <NavigationProperty Name="tPruebas" Relationship="PrototiposModel.FK_tPrueba_tUsuarios" FromRole="tUsuario" ToRole="tPrueba" />
+    <NavigationProperty Name="tSeguridads" Relationship="PrototiposModel.FK_tSeguridad_tUsuario" FromRole="tUsuario" ToRole="tSeguridad" />
+  </EntityType>
+  <EntityType Name="v_defPruebaUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="UsuarioCreador" />
+      <PropertyRef Name="Descripcion" />
+      <PropertyRef Name="Bloqueo" />
+      <PropertyRef Name="Resuelta" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="FechaCorta" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioCreador" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Limitaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Bloqueo" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioBloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FechaDesbloqueo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistroDesbloqueo" Type="DateTime" />
+    <Property Name="UsuarioDesbloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RazonDesbloqueo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Resuelta" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="FechaResolucion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistroResolucion" Type="DateTime" />
+    <Property Name="UsuarioResolucion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesResolucion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tieneArchivos" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="v_defUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="UsuarioCreador" />
+      <PropertyRef Name="Descripcion" />
+      <PropertyRef Name="Bloqueo" />
+      <PropertyRef Name="Resuelta" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="FechaCorta" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioCreador" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Limitaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Bloqueo" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioBloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FechaDesbloqueo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistroDesbloqueo" Type="DateTime" />
+    <Property Name="UsuarioDesbloqueo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RazonDesbloqueo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Resuelta" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="FechaResolucion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistroResolucion" Type="DateTime" />
+    <Property Name="UsuarioResolucion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesResolucion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tieneArchivos" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="v_faseAfectaSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdDeficienciaFas" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficienciaFas" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_faseDefSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdDeficienciaFas" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficienciaFas" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_faseSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_faseUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="EsInicial" />
+      <PropertyRef Name="FechaInsercion" />
+      <PropertyRef Name="Deficiencia" />
+      <PropertyRef Name="BloqueoGrua" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdFase" Type="Int32" Nullable="false" />
+    <Property Name="EsInicial" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="FechaInsercion" Type="DateTime" Nullable="false" />
+    <Property Name="FechaPuestaMarcha" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Usuario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ConfiguracionMontaje" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Deficiencia" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DesmontajeFinal" Type="Boolean" />
+    <Property Name="Desmontaje" Type="Boolean" />
+    <Property Name="FechaDesmontaje" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesDesmontaje" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioDesmontaje" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ObservacionesTratamiento" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tieneArchivos" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="BloqueoGrua" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioBloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="v_pruebaAfectaSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdDeficienciaPru" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficienciaPru" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_pruebaDefSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdDeficienciaPru" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="IdDeficienciaPru" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_pruebaSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdSistema" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Otros" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Orden" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_pruebaUsSemana">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="FechaRegistroPrueba" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Prueba" />
+      <PropertyRef Name="Deficiencia" />
+      <PropertyRef Name="BloqueoGrua" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="FechaPrueba" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistroPrueba" Type="DateTime" Nullable="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Prueba" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Deficiencia" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="BloqueoGrua" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioBloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="v_pruebaUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="FechaRegistroPrueba" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Prueba" />
+      <PropertyRef Name="Deficiencia" />
+      <PropertyRef Name="BloqueoGrua" />
+    </Key>
+    <Property Name="IdPrototipo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrueba" Type="Int32" Nullable="false" />
+    <Property Name="FechaPrueba" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistroPrueba" Type="DateTime" Nullable="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Prueba" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Deficiencia" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="tieneArchivos" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="BloqueoGrua" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="UsuarioBloqueoGrua" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_tDeficiencia_tFase">
+    <End Role="tFase" Type="PrototiposModel.tFase" Multiplicity="1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFase">
+        <PropertyRef Name="IdFase" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioDesbloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuario2">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioResolucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuarios">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioBloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaArchivo_tDeficiencia">
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="1" />
+    <End Role="tDeficienciaArchivo" Type="PrototiposModel.tDeficienciaArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficiencia">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tDeficienciaArchivo">
+        <PropertyRef Name="IdDeficiencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFaseAfecta_tDeficiencia">
+    <End Role="tDeficiencia" Type="PrototiposModel.tDeficiencia" Multiplicity="1" />
+    <End Role="tFaseAfecta" Type="PrototiposModel.tFaseAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficiencia">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tFaseAfecta">
+        <PropertyRef Name="IdDeficienciaFas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPruArchivo_tDeficienciaPrueba">
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="1" />
+    <End Role="tDeficienciaPruArchivo" Type="PrototiposModel.tDeficienciaPruArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tDeficienciaPruArchivo">
+        <PropertyRef Name="IdDeficiencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tPrueba">
+    <End Role="tPrueba" Type="PrototiposModel.tPrueba" Multiplicity="1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrueba">
+        <PropertyRef Name="IdPrueba" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdPrueba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioBloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioDesbloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario2">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioResolucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario3">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebaAfecta_tDeficienciaPrueba">
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.tDeficienciaPrueba" Multiplicity="1" />
+    <End Role="tPruebaAfecta" Type="PrototiposModel.tPruebaAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tPruebaAfecta">
+        <PropertyRef Name="IdDeficienciaPru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFase_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tFase" Type="PrototiposModel.tFase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tFase">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFase_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tFase" Type="PrototiposModel.tFase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tFase">
+        <PropertyRef Name="IdUsuarioDesmontaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFaseArchivo_tFase">
+    <End Role="tFase" Type="PrototiposModel.tFase" Multiplicity="1" />
+    <End Role="tFaseArchivo" Type="PrototiposModel.tFaseArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFase">
+        <PropertyRef Name="IdFase" />
+      </Principal>
+      <Dependent Role="tFaseArchivo">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tTratamientoPieza_tFase">
+    <End Role="tFase" Type="PrototiposModel.tFase" Multiplicity="1" />
+    <End Role="tTratamientoPieza" Type="PrototiposModel.tTratamientoPieza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFase">
+        <PropertyRef Name="IdFase" />
+      </Principal>
+      <Dependent Role="tTratamientoPieza">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFaseAfecta_tSistema">
+    <End Role="tSistema" Type="PrototiposModel.tSistema" Multiplicity="1" />
+    <End Role="tFaseAfecta" Type="PrototiposModel.tFaseAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSistema">
+        <PropertyRef Name="IdSistema" />
+      </Principal>
+      <Dependent Role="tFaseAfecta">
+        <PropertyRef Name="IdSistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipo_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrototipo">
+        <PropertyRef Name="IdUsuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipo_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="0..1" />
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrototipo">
+        <PropertyRef Name="IdUsuarioCierre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipo_tUsuarios">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrototipo">
+        <PropertyRef Name="Responsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipoArchivo_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="1" />
+    <End Role="tPrototipoArchivo" Type="PrototiposModel.tPrototipoArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tPrototipoArchivo">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrueba_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="1" />
+    <End Role="tPrueba" Type="PrototiposModel.tPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tPrueba">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSeguridad_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.tPrototipo" Multiplicity="1" />
+    <End Role="tSeguridad" Type="PrototiposModel.tSeguridad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tSeguridad">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrueba_tUsuarios">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tPrueba" Type="PrototiposModel.tPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrueba">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebaArchivo_tPrueba">
+    <End Role="tPrueba" Type="PrototiposModel.tPrueba" Multiplicity="1" />
+    <End Role="tPruebaArchivo" Type="PrototiposModel.tPruebaArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrueba">
+        <PropertyRef Name="IdPrueba" />
+      </Principal>
+      <Dependent Role="tPruebaArchivo">
+        <PropertyRef Name="IdPrueba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebaAfecta_tSistema">
+    <End Role="tSistema" Type="PrototiposModel.tSistema" Multiplicity="1" />
+    <End Role="tPruebaAfecta" Type="PrototiposModel.tPruebaAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSistema">
+        <PropertyRef Name="IdSistema" />
+      </Principal>
+      <Dependent Role="tPruebaAfecta">
+        <PropertyRef Name="IdSistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSeguridad_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.tUsuario" Multiplicity="1" />
+    <End Role="tSeguridad" Type="PrototiposModel.tSeguridad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tSeguridad">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

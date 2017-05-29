@@ -1,0 +1,153 @@
+﻿@model Prototipos.Models.ViewModels.EditarPruebaView
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Edición de la prueba";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<div class="message-success3">
+    @ViewBag.SuccessMessage
+</div>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+<br />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        @Html.HiddenFor(m => m.PruebaActual.IdPrototipo)
+        @Html.HiddenFor(m => m.PruebaActual.IdPrueba)
+        @Html.HiddenFor(m => m.PruebaActual.FechaRegistroPrueba)
+        @Html.HiddenFor(m => m.PruebaActual.IdUsuario)
+        @Html.HiddenFor(m => m.PruebaActual.BloqueoGrua)
+        @Html.HiddenFor(m => m.PruebaActual.IdUsuarioBloqueoGrua)
+        @Html.HiddenFor(m => m.PruebaActual.FechaDesbloqueoGrua)
+        @Html.HiddenFor(m => m.PruebaActual.FechaRegistroDesbloqueoGrua)
+        @Html.HiddenFor(m => m.PruebaActual.IdUsuarioDesbloqueoGrua)
+        @Html.HiddenFor(m => m.PruebaActual.RazonDesbloqueoGrua)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaPrueba)
+        </div>
+        @if (Model.TieneDefPrueba(Model.PruebaActual.IdPrueba))
+        {
+            <div><i>No se puede modificar la fecha de la prueba si tiene deficiencias</i></div>
+            <div class="editor-ali">
+                @Html.HiddenFor(m => m.PruebaActual.FechaPrueba)
+                @Html.DisplayFor(model => model.PruebaActual.FechaPrueba, "ShortDateTime")
+            </div>
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FechaPrueba)
+                @Html.ValidationMessageFor(model => model.FechaPrueba)
+            </div>
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuario)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usCreador
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prueba)
+        </div>
+        <div><i>Describir lo que se ha hecho en el prototipo</i></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prueba)
+            @Html.ValidationMessageFor(model => model.Prueba)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Deficiencia)
+        </div>
+        @if (Model.TieneDefPrueba(Model.PruebaActual.IdPrueba))
+        {
+            @Html.HiddenFor(m => m.PruebaActual.Deficiencia)
+            <div>
+                <div class="float-rightAbajo">
+                    <a href="@Url.Action("NuevaDefPrueba", "Home", new { id = Model.PruebaActual.IdPrueba })" target="_blank" class="button">Nueva deficiencia</a>
+                </div>
+                <div class="editor-ali2">
+                    Sí
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Deficiencia, "YesNoDropDown")
+                @Html.ValidationMessageFor(model => model.Deficiencia)
+            </div>
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BloqueoGrua)
+        </div>
+        @if (Model.BloqueoGrua == true)
+        {
+            <div class="editor-ali">
+                @ViewBag.BloqueoGrua
+            </div>
+            if (Model.IdUsuarioBloqueoGrua != null)
+            {
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IdUsuarioBloqueoGrua)
+                </div>
+                <div class="editor-ali">
+                    @ViewBag.usBloqueoGrua
+                </div>
+            }
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.BloqueoGrua, "BloqueoDropDown")
+            </div>
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SituacionBloqueoGrua) <i>(Sólo si bloquea la KX1953)</i>
+        </div>
+        <div><i>Descripción, tiempo estimado que lo estará...</i></div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SituacionBloqueoGrua)
+            @Html.ValidationMessageFor(model => model.SituacionBloqueoGrua)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Editar" />
+        </p>
+    </fieldset>
+}
+<br />
+<br />
+<h5>
+    @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    <span class="float-right">
+        @Html.ActionLink("Atrás a gestión de pruebas", "GestionPruebas", new { id = idProy })
+    </span>
+</h5>

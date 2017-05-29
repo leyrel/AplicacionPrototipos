@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Deficiencia desbloqueada con éxito";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<br />
+<div class="center">
+    <div class="titleOk">
+        <h1>@ViewBag.Title</h1>
+    </div>
+</div>
+<br />
+<div class="message-aviso">
+    @ViewBag.AvisoMessage
+</div>
+<br />
+
+<h5>
+    @Html.ActionLink("Volver a elegir proyecto a gestionar", "Gestion")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a desbloqueo", "Desbloqueo", new { id = idProy })
+    </span>
+</h5>

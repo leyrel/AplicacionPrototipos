@@ -1,0 +1,104 @@
+﻿@model Prototipos.Models.ViewModels.CierreProyectoView
+
+@{
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+    ViewBag.Title = "Cierre";
+}
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        @Html.HiddenFor(m => m.ProyectoActual.IdPrototipo)
+        @Html.HiddenFor(m => m.ProyectoActual.FechaCreacion)
+        @Html.HiddenFor(m => m.ProyectoActual.IdUsuarioCreador)
+        @Html.HiddenFor(m => m.ProyectoActual.Proyecto)
+        @Html.HiddenFor(m => m.ProyectoActual.Responsable)
+        @Html.HiddenFor(m => m.ProyectoActual.Configuracion)
+        @Html.HiddenFor(m => m.ProyectoActual.Observaciones)
+        @Html.HiddenFor(m => m.ProyectoActual.Estado)
+        @Html.HiddenFor(m => m.ProyectoActual.IdUsuarioCierre)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaCreacion)
+        </div>
+        <div class="editor-ali">
+            @Html.DisplayFor(model => model.FechaCreacion, "ShortDateTime")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuarioCreador)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.creador
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-ali">
+            @Model.Descripcion
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Responsable)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.Responsable
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Configuracion)
+        </div>
+        <div class="editor-ali">
+            @Model.Configuracion
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observaciones)
+        </div>
+        <div class="editor-ali">
+            @Model.Observaciones
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaCierre)
+        </div>
+        <div class="editor-fecha">
+            @Html.EditorFor(model => model.FechaCierre)
+            @Html.ValidationMessageFor(model => model.FechaCierre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cierre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cierre)
+            @Html.ValidationMessageFor(model => model.Cierre)
+        </div>
+        <br />
+        <div class="center">
+            <a href="@Url.Action("ProyAdjuntarYCerrar", "Files", new { id = ViewBag.idProy })" target="_blank" class="button6">Adjuntar un archivo</a>
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Cerrar" />
+        </p>
+    </fieldset>
+}
+
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a elegir proyecto a cerrar", "Cierre")
+    </span>
+</h5>

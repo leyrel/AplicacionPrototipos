@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewBag.Title = "Gestión";
+
+    WebGrid grid = new WebGrid(Model, selectionFieldName: "selectedRow", rowsPerPage: 10);
+}
+
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+
+<div class="center">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+        <h2>@ViewBag.Message</h2>
+        <h3>Busque y/o seleccione el proyecto que desea gestionar:</h3>
+    </div>
+    <br />
+
+    @using (Html.BeginForm("Gestion", null, FormMethod.Get))
+    {    
+        <h5> Proyecto: @Html.TextBox("SearchString") 
+        <input type="submit" value="Buscar" /></h5> 
+    } 
+    <br />
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-grid",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("Proyecto", header: "Proyecto", style: "pro",
+                                        format: (item) => item.GetSelectLink(item.Proyecto)),
+                grid.Column("FechaCreacion", header: "Fecha creación", style: "fech", 
+                                          format: (item) => item.FechaCreacion != null ? item.FechaCreacion.ToString("dd-MM-yyyy") : ""),
+                grid.Column("", header: "Opciones", style: "opcDef", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar", "EditarProyecto", new { id = item.IdPrototipo })
+                                            |@Html.ActionLink("Seleccionar", "GestionProyecto", new { id = item.IdPrototipo })
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>

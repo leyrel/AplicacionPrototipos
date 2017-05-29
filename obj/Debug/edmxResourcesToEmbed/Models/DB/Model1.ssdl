@@ -1,0 +1,1190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrototiposModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PrototiposModelStoreContainer">
+    <EntitySet Name="tDeficiencia" EntityType="PrototiposModel.Store.tDeficiencia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tDeficienciaArchivo" EntityType="PrototiposModel.Store.tDeficienciaArchivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tDeficienciaPruArchivo" EntityType="PrototiposModel.Store.tDeficienciaPruArchivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tDeficienciaPrueba" EntityType="PrototiposModel.Store.tDeficienciaPrueba" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tFase" EntityType="PrototiposModel.Store.tFase" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tFaseAfecta" EntityType="PrototiposModel.Store.tFaseAfecta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tFaseArchivo" EntityType="PrototiposModel.Store.tFaseArchivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPrototipo" EntityType="PrototiposModel.Store.tPrototipo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPrototipoArchivo" EntityType="PrototiposModel.Store.tPrototipoArchivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPrueba" EntityType="PrototiposModel.Store.tPrueba" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPruebaAfecta" EntityType="PrototiposModel.Store.tPruebaAfecta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tPruebaArchivo" EntityType="PrototiposModel.Store.tPruebaArchivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tSeguridad" EntityType="PrototiposModel.Store.tSeguridad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tSistema" EntityType="PrototiposModel.Store.tSistema" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tTratamientoPieza" EntityType="PrototiposModel.Store.tTratamientoPieza" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tUsuario" EntityType="PrototiposModel.Store.tUsuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="v_defPruebaUsuario" EntityType="PrototiposModel.Store.v_defPruebaUsuario" store:Type="Views" store:Schema="dbo" store:Name="v_defPruebaUsuario">
+      <DefiningQuery>SELECT 
+      [v_defPruebaUsuario].[IdPrototipo] AS [IdPrototipo], 
+      [v_defPruebaUsuario].[IdPrueba] AS [IdPrueba], 
+      [v_defPruebaUsuario].[IdDeficiencia] AS [IdDeficiencia], 
+      [v_defPruebaUsuario].[Fecha] AS [Fecha], 
+      [v_defPruebaUsuario].[FechaCorta] AS [FechaCorta], 
+      [v_defPruebaUsuario].[UsuarioCreador] AS [UsuarioCreador], 
+      [v_defPruebaUsuario].[Descripcion] AS [Descripcion], 
+      [v_defPruebaUsuario].[Limitaciones] AS [Limitaciones], 
+      [v_defPruebaUsuario].[Bloqueo] AS [Bloqueo], 
+      [v_defPruebaUsuario].[UsuarioBloqueo] AS [UsuarioBloqueo], 
+      [v_defPruebaUsuario].[FechaDesbloqueo] AS [FechaDesbloqueo], 
+      [v_defPruebaUsuario].[FechaRegistroDesbloqueo] AS [FechaRegistroDesbloqueo], 
+      [v_defPruebaUsuario].[UsuarioDesbloqueo] AS [UsuarioDesbloqueo], 
+      [v_defPruebaUsuario].[RazonDesbloqueo] AS [RazonDesbloqueo], 
+      [v_defPruebaUsuario].[Resuelta] AS [Resuelta], 
+      [v_defPruebaUsuario].[FechaResolucion] AS [FechaResolucion], 
+      [v_defPruebaUsuario].[FechaRegistroResolucion] AS [FechaRegistroResolucion], 
+      [v_defPruebaUsuario].[UsuarioResolucion] AS [UsuarioResolucion], 
+      [v_defPruebaUsuario].[ObservacionesResolucion] AS [ObservacionesResolucion], 
+      [v_defPruebaUsuario].[tieneArchivos] AS [tieneArchivos]
+      FROM [dbo].[v_defPruebaUsuario] AS [v_defPruebaUsuario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_defUsuario" EntityType="PrototiposModel.Store.v_defUsuario" store:Type="Views" store:Schema="dbo" store:Name="v_defUsuario">
+      <DefiningQuery>SELECT 
+      [v_defUsuario].[IdPrototipo] AS [IdPrototipo], 
+      [v_defUsuario].[IdFase] AS [IdFase], 
+      [v_defUsuario].[IdDeficiencia] AS [IdDeficiencia], 
+      [v_defUsuario].[Fecha] AS [Fecha], 
+      [v_defUsuario].[FechaCorta] AS [FechaCorta], 
+      [v_defUsuario].[UsuarioCreador] AS [UsuarioCreador], 
+      [v_defUsuario].[Descripcion] AS [Descripcion], 
+      [v_defUsuario].[Limitaciones] AS [Limitaciones], 
+      [v_defUsuario].[Bloqueo] AS [Bloqueo], 
+      [v_defUsuario].[UsuarioBloqueo] AS [UsuarioBloqueo], 
+      [v_defUsuario].[FechaDesbloqueo] AS [FechaDesbloqueo], 
+      [v_defUsuario].[FechaRegistroDesbloqueo] AS [FechaRegistroDesbloqueo], 
+      [v_defUsuario].[UsuarioDesbloqueo] AS [UsuarioDesbloqueo], 
+      [v_defUsuario].[RazonDesbloqueo] AS [RazonDesbloqueo], 
+      [v_defUsuario].[Resuelta] AS [Resuelta], 
+      [v_defUsuario].[FechaResolucion] AS [FechaResolucion], 
+      [v_defUsuario].[FechaRegistroResolucion] AS [FechaRegistroResolucion], 
+      [v_defUsuario].[UsuarioResolucion] AS [UsuarioResolucion], 
+      [v_defUsuario].[ObservacionesResolucion] AS [ObservacionesResolucion], 
+      [v_defUsuario].[tieneArchivos] AS [tieneArchivos]
+      FROM [dbo].[v_defUsuario] AS [v_defUsuario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_faseAfectaSistema" EntityType="PrototiposModel.Store.v_faseAfectaSistema" store:Type="Views" store:Schema="dbo" store:Name="v_faseAfectaSistema">
+      <DefiningQuery>SELECT 
+      [v_faseAfectaSistema].[IdPrototipo] AS [IdPrototipo], 
+      [v_faseAfectaSistema].[IdFase] AS [IdFase], 
+      [v_faseAfectaSistema].[IdDeficienciaFas] AS [IdDeficienciaFas], 
+      [v_faseAfectaSistema].[IdSistema] AS [IdSistema], 
+      [v_faseAfectaSistema].[Nombre] AS [Nombre], 
+      [v_faseAfectaSistema].[Otros] AS [Otros], 
+      [v_faseAfectaSistema].[Orden] AS [Orden]
+      FROM [dbo].[v_faseAfectaSistema] AS [v_faseAfectaSistema]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_faseDefSinResSistema" EntityType="PrototiposModel.Store.v_faseDefSinResSistema" store:Type="Views" store:Schema="dbo" store:Name="v_faseDefSinResSistema">
+      <DefiningQuery>SELECT 
+      [v_faseDefSinResSistema].[IdPrototipo] AS [IdPrototipo], 
+      [v_faseDefSinResSistema].[IdFase] AS [IdFase], 
+      [v_faseDefSinResSistema].[IdDeficienciaFas] AS [IdDeficienciaFas], 
+      [v_faseDefSinResSistema].[IdSistema] AS [IdSistema], 
+      [v_faseDefSinResSistema].[Fecha] AS [Fecha], 
+      [v_faseDefSinResSistema].[Nombre] AS [Nombre], 
+      [v_faseDefSinResSistema].[Otros] AS [Otros], 
+      [v_faseDefSinResSistema].[Orden] AS [Orden]
+      FROM [dbo].[v_faseDefSinResSistema] AS [v_faseDefSinResSistema]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_faseSinResSistema" EntityType="PrototiposModel.Store.v_faseSinResSistema" store:Type="Views" store:Schema="dbo" store:Name="v_faseSinResSistema">
+      <DefiningQuery>SELECT 
+      [v_faseSinResSistema].[IdPrototipo] AS [IdPrototipo], 
+      [v_faseSinResSistema].[IdSistema] AS [IdSistema], 
+      [v_faseSinResSistema].[Nombre] AS [Nombre], 
+      [v_faseSinResSistema].[Otros] AS [Otros], 
+      [v_faseSinResSistema].[Orden] AS [Orden]
+      FROM [dbo].[v_faseSinResSistema] AS [v_faseSinResSistema]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_faseUsuario" EntityType="PrototiposModel.Store.v_faseUsuario" store:Type="Views" store:Schema="dbo" store:Name="v_faseUsuario">
+      <DefiningQuery>SELECT 
+      [v_faseUsuario].[IdPrototipo] AS [IdPrototipo], 
+      [v_faseUsuario].[IdFase] AS [IdFase], 
+      [v_faseUsuario].[EsInicial] AS [EsInicial], 
+      [v_faseUsuario].[FechaInsercion] AS [FechaInsercion], 
+      [v_faseUsuario].[FechaPuestaMarcha] AS [FechaPuestaMarcha], 
+      [v_faseUsuario].[Usuario] AS [Usuario], 
+      [v_faseUsuario].[ConfiguracionMontaje] AS [ConfiguracionMontaje], 
+      [v_faseUsuario].[Observaciones] AS [Observaciones], 
+      [v_faseUsuario].[Deficiencia] AS [Deficiencia], 
+      [v_faseUsuario].[DesmontajeFinal] AS [DesmontajeFinal], 
+      [v_faseUsuario].[Desmontaje] AS [Desmontaje], 
+      [v_faseUsuario].[FechaDesmontaje] AS [FechaDesmontaje], 
+      [v_faseUsuario].[ObservacionesDesmontaje] AS [ObservacionesDesmontaje], 
+      [v_faseUsuario].[UsuarioDesmontaje] AS [UsuarioDesmontaje], 
+      [v_faseUsuario].[ObservacionesTratamiento] AS [ObservacionesTratamiento], 
+      [v_faseUsuario].[tieneArchivos] AS [tieneArchivos], 
+      [v_faseUsuario].[BloqueoGrua] AS [BloqueoGrua], 
+      [v_faseUsuario].[UsuarioBloqueoGrua] AS [UsuarioBloqueoGrua]
+      FROM [dbo].[v_faseUsuario] AS [v_faseUsuario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_pruebaAfectaSistema" EntityType="PrototiposModel.Store.v_pruebaAfectaSistema" store:Type="Views" store:Schema="dbo" store:Name="v_pruebaAfectaSistema">
+      <DefiningQuery>SELECT 
+      [v_pruebaAfectaSistema].[IdPrototipo] AS [IdPrototipo], 
+      [v_pruebaAfectaSistema].[IdPrueba] AS [IdPrueba], 
+      [v_pruebaAfectaSistema].[IdDeficienciaPru] AS [IdDeficienciaPru], 
+      [v_pruebaAfectaSistema].[IdSistema] AS [IdSistema], 
+      [v_pruebaAfectaSistema].[Nombre] AS [Nombre], 
+      [v_pruebaAfectaSistema].[Otros] AS [Otros], 
+      [v_pruebaAfectaSistema].[Orden] AS [Orden]
+      FROM [dbo].[v_pruebaAfectaSistema] AS [v_pruebaAfectaSistema]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_pruebaDefSinResSistema" EntityType="PrototiposModel.Store.v_pruebaDefSinResSistema" store:Type="Views" store:Schema="dbo" store:Name="v_pruebaDefSinResSistema">
+      <DefiningQuery>SELECT 
+      [v_pruebaDefSinResSistema].[IdPrototipo] AS [IdPrototipo], 
+      [v_pruebaDefSinResSistema].[IdPrueba] AS [IdPrueba], 
+      [v_pruebaDefSinResSistema].[IdDeficienciaPru] AS [IdDeficienciaPru], 
+      [v_pruebaDefSinResSistema].[IdSistema] AS [IdSistema], 
+      [v_pruebaDefSinResSistema].[Fecha] AS [Fecha], 
+      [v_pruebaDefSinResSistema].[Nombre] AS [Nombre], 
+      [v_pruebaDefSinResSistema].[Otros] AS [Otros], 
+      [v_pruebaDefSinResSistema].[Orden] AS [Orden]
+      FROM [dbo].[v_pruebaDefSinResSistema] AS [v_pruebaDefSinResSistema]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_pruebaSinResSistema" EntityType="PrototiposModel.Store.v_pruebaSinResSistema" store:Type="Views" store:Schema="dbo" store:Name="v_pruebaSinResSistema">
+      <DefiningQuery>SELECT 
+      [v_pruebaSinResSistema].[IdPrototipo] AS [IdPrototipo], 
+      [v_pruebaSinResSistema].[IdSistema] AS [IdSistema], 
+      [v_pruebaSinResSistema].[Nombre] AS [Nombre], 
+      [v_pruebaSinResSistema].[Otros] AS [Otros], 
+      [v_pruebaSinResSistema].[Orden] AS [Orden]
+      FROM [dbo].[v_pruebaSinResSistema] AS [v_pruebaSinResSistema]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_pruebaUsSemana" EntityType="PrototiposModel.Store.v_pruebaUsSemana" store:Type="Views" store:Schema="dbo" store:Name="v_pruebaUsSemana">
+      <DefiningQuery>SELECT 
+      [v_pruebaUsSemana].[IdPrototipo] AS [IdPrototipo], 
+      [v_pruebaUsSemana].[IdPrueba] AS [IdPrueba], 
+      [v_pruebaUsSemana].[FechaPrueba] AS [FechaPrueba], 
+      [v_pruebaUsSemana].[FechaRegistroPrueba] AS [FechaRegistroPrueba], 
+      [v_pruebaUsSemana].[Usuario] AS [Usuario], 
+      [v_pruebaUsSemana].[Prueba] AS [Prueba], 
+      [v_pruebaUsSemana].[Deficiencia] AS [Deficiencia], 
+      [v_pruebaUsSemana].[BloqueoGrua] AS [BloqueoGrua], 
+      [v_pruebaUsSemana].[UsuarioBloqueoGrua] AS [UsuarioBloqueoGrua]
+      FROM [dbo].[v_pruebaUsSemana] AS [v_pruebaUsSemana]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_pruebaUsuario" EntityType="PrototiposModel.Store.v_pruebaUsuario" store:Type="Views" store:Schema="dbo" store:Name="v_pruebaUsuario">
+      <DefiningQuery>SELECT 
+      [v_pruebaUsuario].[IdPrototipo] AS [IdPrototipo], 
+      [v_pruebaUsuario].[IdPrueba] AS [IdPrueba], 
+      [v_pruebaUsuario].[FechaPrueba] AS [FechaPrueba], 
+      [v_pruebaUsuario].[FechaRegistroPrueba] AS [FechaRegistroPrueba], 
+      [v_pruebaUsuario].[Usuario] AS [Usuario], 
+      [v_pruebaUsuario].[Prueba] AS [Prueba], 
+      [v_pruebaUsuario].[Deficiencia] AS [Deficiencia], 
+      [v_pruebaUsuario].[tieneArchivos] AS [tieneArchivos], 
+      [v_pruebaUsuario].[BloqueoGrua] AS [BloqueoGrua], 
+      [v_pruebaUsuario].[UsuarioBloqueoGrua] AS [UsuarioBloqueoGrua]
+      FROM [dbo].[v_pruebaUsuario] AS [v_pruebaUsuario]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tDeficiencia_tFase" Association="PrototiposModel.Store.FK_tDeficiencia_tFase">
+      <End Role="tFase" EntitySet="tFase" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tPrototipo" Association="PrototiposModel.Store.FK_tDeficiencia_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuario" Association="PrototiposModel.Store.FK_tDeficiencia_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuario1" Association="PrototiposModel.Store.FK_tDeficiencia_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuario2" Association="PrototiposModel.Store.FK_tDeficiencia_tUsuario2">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficiencia_tUsuarios" Association="PrototiposModel.Store.FK_tDeficiencia_tUsuarios">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaArchivo_tDeficiencia" Association="PrototiposModel.Store.FK_tDeficienciaArchivo_tDeficiencia">
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+      <End Role="tDeficienciaArchivo" EntitySet="tDeficienciaArchivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPruArchivo_tDeficienciaPrueba" Association="PrototiposModel.Store.FK_tDeficienciaPruArchivo_tDeficienciaPrueba">
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+      <End Role="tDeficienciaPruArchivo" EntitySet="tDeficienciaPruArchivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tPrototipo" Association="PrototiposModel.Store.FK_tDeficienciaPrueba_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tPrueba" Association="PrototiposModel.Store.FK_tDeficienciaPrueba_tPrueba">
+      <End Role="tPrueba" EntitySet="tPrueba" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario" Association="PrototiposModel.Store.FK_tDeficienciaPrueba_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario1" Association="PrototiposModel.Store.FK_tDeficienciaPrueba_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario2" Association="PrototiposModel.Store.FK_tDeficienciaPrueba_tUsuario2">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDeficienciaPrueba_tUsuario3" Association="PrototiposModel.Store.FK_tDeficienciaPrueba_tUsuario3">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFase_tUsuario" Association="PrototiposModel.Store.FK_tFase_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tFase" EntitySet="tFase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFase_tUsuario1" Association="PrototiposModel.Store.FK_tFase_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tFase" EntitySet="tFase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFaseAfecta_tDeficiencia" Association="PrototiposModel.Store.FK_tFaseAfecta_tDeficiencia">
+      <End Role="tDeficiencia" EntitySet="tDeficiencia" />
+      <End Role="tFaseAfecta" EntitySet="tFaseAfecta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFaseAfecta_tSistema" Association="PrototiposModel.Store.FK_tFaseAfecta_tSistema">
+      <End Role="tSistema" EntitySet="tSistema" />
+      <End Role="tFaseAfecta" EntitySet="tFaseAfecta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tFaseArchivo_tFase" Association="PrototiposModel.Store.FK_tFaseArchivo_tFase">
+      <End Role="tFase" EntitySet="tFase" />
+      <End Role="tFaseArchivo" EntitySet="tFaseArchivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipo_tUsuario" Association="PrototiposModel.Store.FK_tPrototipo_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipo_tUsuario1" Association="PrototiposModel.Store.FK_tPrototipo_tUsuario1">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipo_tUsuarios" Association="PrototiposModel.Store.FK_tPrototipo_tUsuarios">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrototipoArchivo_tPrototipo" Association="PrototiposModel.Store.FK_tPrototipoArchivo_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+      <End Role="tPrototipoArchivo" EntitySet="tPrototipoArchivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrueba_tPrototipo" Association="PrototiposModel.Store.FK_tPrueba_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+      <End Role="tPrueba" EntitySet="tPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPrueba_tUsuarios" Association="PrototiposModel.Store.FK_tPrueba_tUsuarios">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tPrueba" EntitySet="tPrueba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebaAfecta_tDeficienciaPrueba" Association="PrototiposModel.Store.FK_tPruebaAfecta_tDeficienciaPrueba">
+      <End Role="tDeficienciaPrueba" EntitySet="tDeficienciaPrueba" />
+      <End Role="tPruebaAfecta" EntitySet="tPruebaAfecta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebaAfecta_tSistema" Association="PrototiposModel.Store.FK_tPruebaAfecta_tSistema">
+      <End Role="tSistema" EntitySet="tSistema" />
+      <End Role="tPruebaAfecta" EntitySet="tPruebaAfecta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebaArchivo_tPrueba" Association="PrototiposModel.Store.FK_tPruebaArchivo_tPrueba">
+      <End Role="tPrueba" EntitySet="tPrueba" />
+      <End Role="tPruebaArchivo" EntitySet="tPruebaArchivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSeguridad_tPrototipo" Association="PrototiposModel.Store.FK_tSeguridad_tPrototipo">
+      <End Role="tPrototipo" EntitySet="tPrototipo" />
+      <End Role="tSeguridad" EntitySet="tSeguridad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tSeguridad_tUsuario" Association="PrototiposModel.Store.FK_tSeguridad_tUsuario">
+      <End Role="tUsuario" EntitySet="tUsuario" />
+      <End Role="tSeguridad" EntitySet="tSeguridad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tTratamientoPieza_tFase" Association="PrototiposModel.Store.FK_tTratamientoPieza_tFase">
+      <End Role="tFase" EntitySet="tFase" />
+      <End Role="tTratamientoPieza" EntitySet="tTratamientoPieza" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tDeficiencia">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="IdUsuarioCreador" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="text" Nullable="false" />
+    <Property Name="Limitaciones" Type="text" />
+    <Property Name="Bloqueo" Type="bit" Nullable="false" />
+    <Property Name="FechaDesbloqueo" Type="datetime" />
+    <Property Name="FechaRegistroDesbloqueo" Type="datetime" />
+    <Property Name="IdUsuarioDesbloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="IdUsuarioBloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="RazonDesbloqueo" Type="text" />
+    <Property Name="FechaResolucion" Type="datetime" />
+    <Property Name="FechaRegistroResolucion" Type="datetime" />
+    <Property Name="IdUsuarioResolucion" Type="varchar" MaxLength="50" />
+    <Property Name="ObservacionesResolucion" Type="text" />
+  </EntityType>
+  <EntityType Name="tDeficienciaArchivo">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdDeficiencia" Type="int" Nullable="false" />
+    <Property Name="IdArch" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" MaxLength="256" />
+    <Property Name="Tipo" Type="varchar" MaxLength="256" />
+    <Property Name="Lenght" Type="money" />
+    <Property Name="Contenido" Type="varbinary(max)" />
+    <Property Name="FechaAdd" Type="datetime" />
+    <Property Name="UsuarioAdd" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tDeficienciaPruArchivo">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdDeficiencia" Type="int" Nullable="false" />
+    <Property Name="IdArch" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" MaxLength="256" />
+    <Property Name="Tipo" Type="varchar" MaxLength="256" />
+    <Property Name="Lenght" Type="money" />
+    <Property Name="Contenido" Type="varbinary(max)" />
+    <Property Name="FechaAdd" Type="datetime" />
+    <Property Name="UsuarioAdd" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tDeficienciaPrueba">
+    <Key>
+      <PropertyRef Name="IdDeficiencia" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="IdUsuarioCreador" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="text" Nullable="false" />
+    <Property Name="Limitaciones" Type="text" />
+    <Property Name="Bloqueo" Type="bit" Nullable="false" />
+    <Property Name="FechaDesbloqueo" Type="datetime" />
+    <Property Name="FechaRegistroDesbloqueo" Type="datetime" />
+    <Property Name="IdUsuarioDesbloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="IdUsuarioBloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="RazonDesbloqueo" Type="text" />
+    <Property Name="FechaResolucion" Type="datetime" />
+    <Property Name="FechaRegistroResolucion" Type="datetime" />
+    <Property Name="IdUsuarioResolucion" Type="varchar" MaxLength="50" />
+    <Property Name="ObservacionesResolucion" Type="text" />
+  </EntityType>
+  <EntityType Name="tFase">
+    <Key>
+      <PropertyRef Name="IdFase" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdFase" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EsInicial" Type="bit" Nullable="false" />
+    <Property Name="FechaInsercion" Type="datetime" Nullable="false" />
+    <Property Name="FechaPuestaMarcha" Type="datetime" />
+    <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ConfiguracionMontaje" Type="varchar" MaxLength="500" />
+    <Property Name="Observaciones" Type="text" />
+    <Property Name="Deficiencia" Type="bit" Nullable="false" />
+    <Property Name="DesmontajeFinal" Type="bit" />
+    <Property Name="Desmontaje" Type="bit" />
+    <Property Name="FechaDesmontaje" Type="datetime" />
+    <Property Name="IdUsuarioDesmontaje" Type="varchar" MaxLength="50" />
+    <Property Name="ObservacionesDesmontaje" Type="text" />
+    <Property Name="ObservacionesTratamiento" Type="text" />
+    <Property Name="BloqueoGrua" Type="bit" Nullable="false" />
+    <Property Name="IdUsuarioBloqueoGrua" Type="varchar" MaxLength="50" />
+    <Property Name="SituacionBloqueoGrua" Type="text" />
+    <Property Name="FechaDesbloqueoGrua" Type="datetime" />
+    <Property Name="FechaRegistroDesbloqueoGrua" Type="datetime" />
+    <Property Name="IdUsuarioDesbloqueoGrua" Type="varchar" MaxLength="50" />
+    <Property Name="RazonDesbloqueoGrua" Type="text" />
+  </EntityType>
+  <EntityType Name="tFaseAfecta">
+    <Key>
+      <PropertyRef Name="IdDeficienciaFas" />
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdDeficienciaFas" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tFaseArchivo">
+    <Key>
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="IdArch" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" MaxLength="256" />
+    <Property Name="Tipo" Type="varchar" MaxLength="256" />
+    <Property Name="Lenght" Type="money" />
+    <Property Name="Contenido" Type="varbinary(max)" />
+    <Property Name="FechaAdd" Type="datetime" />
+    <Property Name="UsuarioAdd" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tPrototipo">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="IdUsuarioCreador" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Proyecto" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Responsable" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Configuracion" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Descripcion" Type="text" />
+    <Property Name="Observaciones" Type="text" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="FechaCierre" Type="datetime" />
+    <Property Name="IdUsuarioCierre" Type="varchar" MaxLength="50" />
+    <Property Name="Cierre" Type="text" />
+  </EntityType>
+  <EntityType Name="tPrototipoArchivo">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdArch" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" MaxLength="256" />
+    <Property Name="Tipo" Type="varchar" MaxLength="256" />
+    <Property Name="Lenght" Type="money" />
+    <Property Name="Contenido" Type="varbinary(max)" />
+    <Property Name="FechaAdd" Type="datetime" />
+    <Property Name="UsuarioAdd" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tPrueba">
+    <Key>
+      <PropertyRef Name="IdPrueba" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FechaPrueba" Type="datetime" />
+    <Property Name="FechaRegistroPrueba" Type="datetime" Nullable="false" />
+    <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Prueba" Type="text" Nullable="false" />
+    <Property Name="Deficiencia" Type="bit" Nullable="false" />
+    <Property Name="BloqueoGrua" Type="bit" Nullable="false" />
+    <Property Name="IdUsuarioBloqueoGrua" Type="varchar" MaxLength="50" />
+    <Property Name="SituacionBloqueoGrua" Type="text" />
+    <Property Name="FechaDesbloqueoGrua" Type="datetime" />
+    <Property Name="FechaRegistroDesbloqueoGrua" Type="datetime" />
+    <Property Name="IdUsuarioDesbloqueoGrua" Type="varchar" MaxLength="50" />
+    <Property Name="RazonDesbloqueoGrua" Type="text" />
+  </EntityType>
+  <EntityType Name="tPruebaAfecta">
+    <Key>
+      <PropertyRef Name="IdDeficienciaPru" />
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdDeficienciaPru" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tPruebaArchivo">
+    <Key>
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdArch" />
+    </Key>
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="IdArch" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" MaxLength="256" />
+    <Property Name="Tipo" Type="varchar" MaxLength="256" />
+    <Property Name="Lenght" Type="money" />
+    <Property Name="Contenido" Type="varbinary(max)" />
+    <Property Name="FechaAdd" Type="datetime" />
+    <Property Name="UsuarioAdd" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tSeguridad">
+    <Key>
+      <PropertyRef Name="IdCheckList" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdCheckList" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SeAcepta" Type="bit" />
+    <Property Name="item1" Type="bit" />
+    <Property Name="item2" Type="bit" />
+    <Property Name="item3" Type="bit" />
+    <Property Name="item4" Type="bit" />
+    <Property Name="item5" Type="bit" />
+    <Property Name="item6" Type="bit" />
+    <Property Name="item7" Type="bit" />
+    <Property Name="item8" Type="bit" />
+    <Property Name="item9" Type="bit" />
+    <Property Name="item10" Type="bit" />
+    <Property Name="item11" Type="bit" />
+    <Property Name="item12" Type="bit" />
+    <Property Name="item13" Type="bit" />
+    <Property Name="item14" Type="bit" />
+    <Property Name="item15" Type="bit" />
+    <Property Name="item16" Type="bit" />
+    <Property Name="prohib1" Type="bit" />
+    <Property Name="prohib2" Type="bit" />
+    <Property Name="prohib3" Type="bit" />
+  </EntityType>
+  <EntityType Name="tSistema">
+    <Key>
+      <PropertyRef Name="IdSistema" />
+    </Key>
+    <Property Name="IdSistema" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <EntityType Name="tTratamientoPieza">
+    <Key>
+      <PropertyRef Name="IdPieza" />
+    </Key>
+    <Property Name="IdPieza" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="Articulo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Accion" Type="varchar" Nullable="false" MaxLength="2500" />
+  </EntityType>
+  <EntityType Name="tUsuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Departamento" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_defPruebaUsuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_defPruebaUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="UsuarioCreador" />
+      <PropertyRef Name="Descripcion" />
+      <PropertyRef Name="Bloqueo" />
+      <PropertyRef Name="Resuelta" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="FechaCorta" Type="varchar" MaxLength="30" />
+    <Property Name="UsuarioCreador" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="text" Nullable="false" />
+    <Property Name="Limitaciones" Type="text" />
+    <Property Name="Bloqueo" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="UsuarioBloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaDesbloqueo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaRegistroDesbloqueo" Type="datetime" />
+    <Property Name="UsuarioDesbloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="RazonDesbloqueo" Type="text" />
+    <Property Name="Resuelta" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="FechaResolucion" Type="varchar" MaxLength="30" />
+    <Property Name="FechaRegistroResolucion" Type="datetime" />
+    <Property Name="UsuarioResolucion" Type="varchar" MaxLength="50" />
+    <Property Name="ObservacionesResolucion" Type="text" />
+    <Property Name="tieneArchivos" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_defUsuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_defUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdDeficiencia" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="UsuarioCreador" />
+      <PropertyRef Name="Descripcion" />
+      <PropertyRef Name="Bloqueo" />
+      <PropertyRef Name="Resuelta" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="IdDeficiencia" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="FechaCorta" Type="varchar" MaxLength="30" />
+    <Property Name="UsuarioCreador" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="text" Nullable="false" />
+    <Property Name="Limitaciones" Type="text" />
+    <Property Name="Bloqueo" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="UsuarioBloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="FechaDesbloqueo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaRegistroDesbloqueo" Type="datetime" />
+    <Property Name="UsuarioDesbloqueo" Type="varchar" MaxLength="50" />
+    <Property Name="RazonDesbloqueo" Type="text" />
+    <Property Name="Resuelta" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="FechaResolucion" Type="varchar" MaxLength="30" />
+    <Property Name="FechaRegistroResolucion" Type="datetime" />
+    <Property Name="UsuarioResolucion" Type="varchar" MaxLength="50" />
+    <Property Name="ObservacionesResolucion" Type="text" />
+    <Property Name="tieneArchivos" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_faseAfectaSistema' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_faseAfectaSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdDeficienciaFas" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="IdDeficienciaFas" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_faseDefSinResSistema' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_faseDefSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="IdDeficienciaFas" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="IdDeficienciaFas" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_faseSinResSistema' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_faseSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_faseUsuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_faseUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdFase" />
+      <PropertyRef Name="EsInicial" />
+      <PropertyRef Name="FechaInsercion" />
+      <PropertyRef Name="Deficiencia" />
+      <PropertyRef Name="BloqueoGrua" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdFase" Type="int" Nullable="false" />
+    <Property Name="EsInicial" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="FechaInsercion" Type="datetime" Nullable="false" />
+    <Property Name="FechaPuestaMarcha" Type="varchar" MaxLength="30" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="ConfiguracionMontaje" Type="varchar" MaxLength="500" />
+    <Property Name="Observaciones" Type="text" />
+    <Property Name="Deficiencia" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="DesmontajeFinal" Type="bit" />
+    <Property Name="Desmontaje" Type="bit" />
+    <Property Name="FechaDesmontaje" Type="varchar" MaxLength="30" />
+    <Property Name="ObservacionesDesmontaje" Type="text" />
+    <Property Name="UsuarioDesmontaje" Type="varchar" MaxLength="50" />
+    <Property Name="ObservacionesTratamiento" Type="text" />
+    <Property Name="tieneArchivos" Type="varchar" MaxLength="2" />
+    <Property Name="BloqueoGrua" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="UsuarioBloqueoGrua" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_pruebaAfectaSistema' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_pruebaAfectaSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdDeficienciaPru" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="IdDeficienciaPru" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_pruebaDefSinResSistema' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_pruebaDefSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="IdDeficienciaPru" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="IdDeficienciaPru" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_pruebaSinResSistema' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_pruebaSinResSistema">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdSistema" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdSistema" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Otros" Type="varchar" MaxLength="100" />
+    <Property Name="Orden" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_pruebaUsSemana' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_pruebaUsSemana">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="FechaRegistroPrueba" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Prueba" />
+      <PropertyRef Name="Deficiencia" />
+      <PropertyRef Name="BloqueoGrua" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="FechaPrueba" Type="varchar" MaxLength="30" />
+    <Property Name="FechaRegistroPrueba" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Prueba" Type="text" Nullable="false" />
+    <Property Name="Deficiencia" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="BloqueoGrua" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="UsuarioBloqueoGrua" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Prototipos.dbo.v_pruebaUsuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="v_pruebaUsuario">
+    <Key>
+      <PropertyRef Name="IdPrototipo" />
+      <PropertyRef Name="IdPrueba" />
+      <PropertyRef Name="FechaRegistroPrueba" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Prueba" />
+      <PropertyRef Name="Deficiencia" />
+      <PropertyRef Name="BloqueoGrua" />
+    </Key>
+    <Property Name="IdPrototipo" Type="int" Nullable="false" />
+    <Property Name="IdPrueba" Type="int" Nullable="false" />
+    <Property Name="FechaPrueba" Type="varchar" MaxLength="30" />
+    <Property Name="FechaRegistroPrueba" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Prueba" Type="text" Nullable="false" />
+    <Property Name="Deficiencia" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="tieneArchivos" Type="varchar" MaxLength="2" />
+    <Property Name="BloqueoGrua" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="UsuarioBloqueoGrua" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tDeficiencia_tFase">
+    <End Role="tFase" Type="PrototiposModel.Store.tFase" Multiplicity="1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFase">
+        <PropertyRef Name="IdFase" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioDesbloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuario2">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioResolucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficiencia_tUsuarios">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficiencia">
+        <PropertyRef Name="IdUsuarioBloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaArchivo_tDeficiencia">
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="1" />
+    <End Role="tDeficienciaArchivo" Type="PrototiposModel.Store.tDeficienciaArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficiencia">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tDeficienciaArchivo">
+        <PropertyRef Name="IdDeficiencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPruArchivo_tDeficienciaPrueba">
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="1" />
+    <End Role="tDeficienciaPruArchivo" Type="PrototiposModel.Store.tDeficienciaPruArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tDeficienciaPruArchivo">
+        <PropertyRef Name="IdDeficiencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tPrueba">
+    <End Role="tPrueba" Type="PrototiposModel.Store.tPrueba" Multiplicity="1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrueba">
+        <PropertyRef Name="IdPrueba" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdPrueba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioBloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioDesbloqueo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario2">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioResolucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDeficienciaPrueba_tUsuario3">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdUsuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFase_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tFase" Type="PrototiposModel.Store.tFase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tFase">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFase_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tFase" Type="PrototiposModel.Store.tFase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tFase">
+        <PropertyRef Name="IdUsuarioDesmontaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFaseAfecta_tDeficiencia">
+    <End Role="tDeficiencia" Type="PrototiposModel.Store.tDeficiencia" Multiplicity="1" />
+    <End Role="tFaseAfecta" Type="PrototiposModel.Store.tFaseAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficiencia">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tFaseAfecta">
+        <PropertyRef Name="IdDeficienciaFas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFaseAfecta_tSistema">
+    <End Role="tSistema" Type="PrototiposModel.Store.tSistema" Multiplicity="1" />
+    <End Role="tFaseAfecta" Type="PrototiposModel.Store.tFaseAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSistema">
+        <PropertyRef Name="IdSistema" />
+      </Principal>
+      <Dependent Role="tFaseAfecta">
+        <PropertyRef Name="IdSistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tFaseArchivo_tFase">
+    <End Role="tFase" Type="PrototiposModel.Store.tFase" Multiplicity="1" />
+    <End Role="tFaseArchivo" Type="PrototiposModel.Store.tFaseArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFase">
+        <PropertyRef Name="IdFase" />
+      </Principal>
+      <Dependent Role="tFaseArchivo">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipo_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrototipo">
+        <PropertyRef Name="IdUsuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipo_tUsuario1">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="0..1" />
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrototipo">
+        <PropertyRef Name="IdUsuarioCierre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipo_tUsuarios">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrototipo">
+        <PropertyRef Name="Responsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrototipoArchivo_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="1" />
+    <End Role="tPrototipoArchivo" Type="PrototiposModel.Store.tPrototipoArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tPrototipoArchivo">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrueba_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="1" />
+    <End Role="tPrueba" Type="PrototiposModel.Store.tPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tPrueba">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPrueba_tUsuarios">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tPrueba" Type="PrototiposModel.Store.tPrueba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tPrueba">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebaAfecta_tDeficienciaPrueba">
+    <End Role="tDeficienciaPrueba" Type="PrototiposModel.Store.tDeficienciaPrueba" Multiplicity="1" />
+    <End Role="tPruebaAfecta" Type="PrototiposModel.Store.tPruebaAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDeficienciaPrueba">
+        <PropertyRef Name="IdDeficiencia" />
+      </Principal>
+      <Dependent Role="tPruebaAfecta">
+        <PropertyRef Name="IdDeficienciaPru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebaAfecta_tSistema">
+    <End Role="tSistema" Type="PrototiposModel.Store.tSistema" Multiplicity="1" />
+    <End Role="tPruebaAfecta" Type="PrototiposModel.Store.tPruebaAfecta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tSistema">
+        <PropertyRef Name="IdSistema" />
+      </Principal>
+      <Dependent Role="tPruebaAfecta">
+        <PropertyRef Name="IdSistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebaArchivo_tPrueba">
+    <End Role="tPrueba" Type="PrototiposModel.Store.tPrueba" Multiplicity="1" />
+    <End Role="tPruebaArchivo" Type="PrototiposModel.Store.tPruebaArchivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrueba">
+        <PropertyRef Name="IdPrueba" />
+      </Principal>
+      <Dependent Role="tPruebaArchivo">
+        <PropertyRef Name="IdPrueba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSeguridad_tPrototipo">
+    <End Role="tPrototipo" Type="PrototiposModel.Store.tPrototipo" Multiplicity="1" />
+    <End Role="tSeguridad" Type="PrototiposModel.Store.tSeguridad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPrototipo">
+        <PropertyRef Name="IdPrototipo" />
+      </Principal>
+      <Dependent Role="tSeguridad">
+        <PropertyRef Name="IdPrototipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tSeguridad_tUsuario">
+    <End Role="tUsuario" Type="PrototiposModel.Store.tUsuario" Multiplicity="1" />
+    <End Role="tSeguridad" Type="PrototiposModel.Store.tSeguridad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tUsuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="tSeguridad">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tTratamientoPieza_tFase">
+    <End Role="tFase" Type="PrototiposModel.Store.tFase" Multiplicity="1" />
+    <End Role="tTratamientoPieza" Type="PrototiposModel.Store.tTratamientoPieza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFase">
+        <PropertyRef Name="IdFase" />
+      </Principal>
+      <Dependent Role="tTratamientoPieza">
+        <PropertyRef Name="IdFase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

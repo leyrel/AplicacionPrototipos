@@ -1,0 +1,46 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    ViewBag.Title = "Desbloqueo KX1953";
+    int idProy = ViewBag.idProy;
+
+    WebGrid grid = new WebGrid(Model.FasesBloq(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<div class="center">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+        <h3>Seleccione la fase/prueba que desea desbloquear:</h3>
+        <br />
+        <h2>@ViewBag.Message5</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("EsInicial", header: "Tipo", style: "fech"),
+                grid.Column("FechaPuestaMarcha", header: "Fecha", style: "fech"),
+                grid.Column("Usuario", header: "Usuario", style: "usCre"),
+                grid.Column("ConfiguracionMontaje", header: "Configuración", style: "descr"),
+                grid.Column("", header: "Opciones", style: "opcDef", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar", "EditarFase", new {id = item.IdFase})
+                                            |@Html.ActionLink("Desbloquear", "DesbloqueoGruaFase", new { id = item.IdFase })
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>

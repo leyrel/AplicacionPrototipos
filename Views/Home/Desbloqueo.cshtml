@@ -1,0 +1,76 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Desbloqueo deficiencias";
+    int idProy = ViewBag.idProy;
+
+    WebGrid grid = new WebGrid(Model.DefsFasesBloq(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<div class="message-success3">
+    @ViewBag.SuccessMessage
+</div>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="center">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+        <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+        <h3>Seleccione la deficiencia que desea desbloquear:</h3>
+        <br />
+        <h2>@ViewBag.Message3</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("Fecha", header: "Fecha", style: "fech",
+                                        format: (item) => item.Fecha != null ? item.Fecha.ToString("dd-MM-yyyy") : ""),
+                grid.Column("UsuarioCreador", header: "Usuario creación", style: "usCre"),
+                grid.Column("Descripcion", header: "Descripción", style: "pro"),
+                grid.Column("", header: "Opciones", style: "opcDef", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar", "EditarDefDesbloqueo", new {id = item.IdDeficiencia})
+                                            |@Html.ActionLink("Desbloquear", "DesbloqueoDef", new {id = item.IdDeficiencia})
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>
+
+@{Html.RenderPartial("DesbloqueoPruebas");}
+<br />
+@{Html.RenderPartial("DesbloqueosGrua");}
+@{Html.RenderPartial("DesbloqueosGruaPruebas");}
+
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    </span>
+</h5>

@@ -1,0 +1,41 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    int idProy = ViewBag.idProy;
+    WebGrid grid = new WebGrid(Model.DefsPruebas(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<div class="center">
+    <div class="title">
+        <h2>@ViewBag.Message4</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("Fecha", header: "Fecha", style: "fech",
+                                        format: (item) => item.Fecha != null ? item.Fecha.ToString("dd-MM-yyyy") : ""),
+                grid.Column("UsuarioCreador", header: "Usuario creación", style: "usCre"),
+                grid.Column("Descripcion", header: "Descripción", style: "pro"),
+                grid.Column("", header: "Opciones", style: "opcDef", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar", "EditarDefResolucionPrueba", new { id = item.IdDeficiencia })
+                                            |@Html.ActionLink("Resolver", "ResolucionDefPrueba", new {id = item.IdDeficiencia})
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>

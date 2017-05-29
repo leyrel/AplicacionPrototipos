@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Eliminar archivo";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+
+<div class="center">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+    </div>
+
+    <h3>¿Está seguro de que quiere eliminarlo?</h3>
+    <br /><br />
+    <a href="@Url.Action("DeleteFileProy", "Files", new { id = ViewBag.idArchivo })" class="button5">Sí</a>
+    <a href="@Url.Action("GestionProyecto", "Home", new { id = ViewBag.idProy })" class="button5">No</a>
+    <br />
+</div>

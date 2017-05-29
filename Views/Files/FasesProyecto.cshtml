@@ -1,0 +1,49 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    int idProy = ViewBag.idProy;
+    WebGrid grid = new WebGrid(Model.fasesProy(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<div class="center">
+    <div class="title">
+        <h2>@ViewBag.Message3</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("EsInicial", header: "Tipo", style: "fech"),
+                grid.Column("FechaPuestaMarcha", header: "Fecha", style: "fech"),
+                grid.Column("Usuario", header: "Usuario", style: "usCre"),
+                grid.Column("ConfiguracionMontaje", header: "Configuración", style: "descr"),
+                grid.Column("Observaciones", header: "Observaciones", style: "descr"),
+                grid.Column("Desmontaje", header: "Desmontada", style: "fech",
+                                format: item => item.Desmontaje == true ? "Sí" : "No"),
+                grid.Column("tieneArchivos", header: "¿Tiene archivos?", style: "opcArch", 
+                                format: (item) => { if (item.tieneArchivos == "Sí") return Html.ActionLink("Sí => Ver", "MontajeArchivos", new { Controller = "Files", id = item.IdFase });
+                                                    else return Html.ActionLink("No => Adjuntar", "MontajeAdjuntar", new { Controller = "Files", id = item.IdFase });}),
+                grid.Column("Deficiencia", header: "¿Tiene deficiencias?", style: "usCre", 
+                                format: (item) => { if (item.Deficiencia == "Sí") return Html.ActionLink("Sí => Ver y Editar", "DefsFase", new { Controller = "Files", id = item.IdFase });
+                                                    else return Html.ActionLink("No => Añadir", "NuevaDeficiencia", new { id = item.IdFase });}),
+                grid.Column("", header: "Opciones", style: "opcArch", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar", "EditarFase", new { id = item.IdFase })
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>

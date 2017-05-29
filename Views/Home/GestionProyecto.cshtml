@@ -1,0 +1,104 @@
+﻿@model Prototipos.Models.ObjectManager.ArchivosProyManager
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Gestión";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<div class="message-success3">
+    @ViewBag.SuccessMessage
+</div>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    <fieldset>
+        
+        @Html.HiddenFor(m => m.ProyectoActual.IdPrototipo)
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.FechaCreacion, "Fecha creación: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.FechaCreacion, "ShortDateTime")
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.IdUsuarioCreador, "Creador: ")
+        </div>
+        <div class="editor-camp">
+            @ViewBag.creador
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Proyecto, "Proyecto: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Proyecto)
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Descripcion, "Descripción: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Descripcion)
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Responsable, "Responsable: ")
+        </div>
+        <div class="editor-camp">
+            @ViewBag.responsable
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Configuracion, "Configuración: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Configuracion)
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Observaciones, "Observaciones: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Observaciones)
+        </div>
+
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Estado, "Estado: ")
+        </div>
+        <div class="editor-camp">
+            @ViewBag.estado
+        </div>
+        <br /><br />
+    </fieldset>
+    <br />
+    <br />
+
+@{Html.RenderPartial("~/Views/Files/ProyArchivos.cshtml");}
+
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a elegir proyecto a gestionar", "Gestion")
+    </span>
+</h5>

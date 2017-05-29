@@ -1,0 +1,31 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Tratamiento";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+<br />
+<br />
+
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    </span>
+</h5>

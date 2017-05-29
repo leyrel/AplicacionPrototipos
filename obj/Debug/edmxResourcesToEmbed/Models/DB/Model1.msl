@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrototiposModelStoreContainer" CdmEntityContainer="PrototiposEntities">
+    <EntitySetMapping Name="tDeficiencias">
+      <EntityTypeMapping TypeName="PrototiposModel.tDeficiencia">
+        <MappingFragment StoreEntitySet="tDeficiencia">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="IdDeficiencia" ColumnName="IdDeficiencia" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdUsuarioCreador" ColumnName="IdUsuarioCreador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Limitaciones" ColumnName="Limitaciones" />
+          <ScalarProperty Name="Bloqueo" ColumnName="Bloqueo" />
+          <ScalarProperty Name="FechaDesbloqueo" ColumnName="FechaDesbloqueo" />
+          <ScalarProperty Name="FechaRegistroDesbloqueo" ColumnName="FechaRegistroDesbloqueo" />
+          <ScalarProperty Name="IdUsuarioDesbloqueo" ColumnName="IdUsuarioDesbloqueo" />
+          <ScalarProperty Name="IdUsuarioBloqueo" ColumnName="IdUsuarioBloqueo" />
+          <ScalarProperty Name="RazonDesbloqueo" ColumnName="RazonDesbloqueo" />
+          <ScalarProperty Name="FechaResolucion" ColumnName="FechaResolucion" />
+          <ScalarProperty Name="FechaRegistroResolucion" ColumnName="FechaRegistroResolucion" />
+          <ScalarProperty Name="IdUsuarioResolucion" ColumnName="IdUsuarioResolucion" />
+          <ScalarProperty Name="ObservacionesResolucion" ColumnName="ObservacionesResolucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDeficienciaArchivos">
+      <EntityTypeMapping TypeName="PrototiposModel.tDeficienciaArchivo">
+        <MappingFragment StoreEntitySet="tDeficienciaArchivo">
+          <ScalarProperty Name="IdDeficiencia" ColumnName="IdDeficiencia" />
+          <ScalarProperty Name="IdArch" ColumnName="IdArch" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="FechaAdd" ColumnName="FechaAdd" />
+          <ScalarProperty Name="UsuarioAdd" ColumnName="UsuarioAdd" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDeficienciaPruArchivos">
+      <EntityTypeMapping TypeName="PrototiposModel.tDeficienciaPruArchivo">
+        <MappingFragment StoreEntitySet="tDeficienciaPruArchivo">
+          <ScalarProperty Name="IdDeficiencia" ColumnName="IdDeficiencia" />
+          <ScalarProperty Name="IdArch" ColumnName="IdArch" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="FechaAdd" ColumnName="FechaAdd" />
+          <ScalarProperty Name="UsuarioAdd" ColumnName="UsuarioAdd" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDeficienciaPruebas">
+      <EntityTypeMapping TypeName="PrototiposModel.tDeficienciaPrueba">
+        <MappingFragment StoreEntitySet="tDeficienciaPrueba">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="IdDeficiencia" ColumnName="IdDeficiencia" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdUsuarioCreador" ColumnName="IdUsuarioCreador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Limitaciones" ColumnName="Limitaciones" />
+          <ScalarProperty Name="Bloqueo" ColumnName="Bloqueo" />
+          <ScalarProperty Name="FechaDesbloqueo" ColumnName="FechaDesbloqueo" />
+          <ScalarProperty Name="FechaRegistroDesbloqueo" ColumnName="FechaRegistroDesbloqueo" />
+          <ScalarProperty Name="IdUsuarioDesbloqueo" ColumnName="IdUsuarioDesbloqueo" />
+          <ScalarProperty Name="IdUsuarioBloqueo" ColumnName="IdUsuarioBloqueo" />
+          <ScalarProperty Name="RazonDesbloqueo" ColumnName="RazonDesbloqueo" />
+          <ScalarProperty Name="FechaResolucion" ColumnName="FechaResolucion" />
+          <ScalarProperty Name="FechaRegistroResolucion" ColumnName="FechaRegistroResolucion" />
+          <ScalarProperty Name="IdUsuarioResolucion" ColumnName="IdUsuarioResolucion" />
+          <ScalarProperty Name="ObservacionesResolucion" ColumnName="ObservacionesResolucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tFases">
+      <EntityTypeMapping TypeName="PrototiposModel.tFase">
+        <MappingFragment StoreEntitySet="tFase">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="EsInicial" ColumnName="EsInicial" />
+          <ScalarProperty Name="FechaInsercion" ColumnName="FechaInsercion" />
+          <ScalarProperty Name="FechaPuestaMarcha" ColumnName="FechaPuestaMarcha" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="ConfiguracionMontaje" ColumnName="ConfiguracionMontaje" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Deficiencia" ColumnName="Deficiencia" />
+          <ScalarProperty Name="DesmontajeFinal" ColumnName="DesmontajeFinal" />
+          <ScalarProperty Name="Desmontaje" ColumnName="Desmontaje" />
+          <ScalarProperty Name="FechaDesmontaje" ColumnName="FechaDesmontaje" />
+          <ScalarProperty Name="IdUsuarioDesmontaje" ColumnName="IdUsuarioDesmontaje" />
+          <ScalarProperty Name="ObservacionesDesmontaje" ColumnName="ObservacionesDesmontaje" />
+          <ScalarProperty Name="ObservacionesTratamiento" ColumnName="ObservacionesTratamiento" />
+          <ScalarProperty Name="BloqueoGrua" ColumnName="BloqueoGrua" />
+          <ScalarProperty Name="IdUsuarioBloqueoGrua" ColumnName="IdUsuarioBloqueoGrua" />
+          <ScalarProperty Name="SituacionBloqueoGrua" ColumnName="SituacionBloqueoGrua" />
+          <ScalarProperty Name="FechaDesbloqueoGrua" ColumnName="FechaDesbloqueoGrua" />
+          <ScalarProperty Name="FechaRegistroDesbloqueoGrua" ColumnName="FechaRegistroDesbloqueoGrua" />
+          <ScalarProperty Name="IdUsuarioDesbloqueoGrua" ColumnName="IdUsuarioDesbloqueoGrua" />
+          <ScalarProperty Name="RazonDesbloqueoGrua" ColumnName="RazonDesbloqueoGrua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tFaseAfectas">
+      <EntityTypeMapping TypeName="PrototiposModel.tFaseAfecta">
+        <MappingFragment StoreEntitySet="tFaseAfecta">
+          <ScalarProperty Name="IdDeficienciaFas" ColumnName="IdDeficienciaFas" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tFaseArchivos">
+      <EntityTypeMapping TypeName="PrototiposModel.tFaseArchivo">
+        <MappingFragment StoreEntitySet="tFaseArchivo">
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="IdArch" ColumnName="IdArch" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="FechaAdd" ColumnName="FechaAdd" />
+          <ScalarProperty Name="UsuarioAdd" ColumnName="UsuarioAdd" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPrototipos">
+      <EntityTypeMapping TypeName="PrototiposModel.tPrototipo">
+        <MappingFragment StoreEntitySet="tPrototipo">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="IdUsuarioCreador" ColumnName="IdUsuarioCreador" />
+          <ScalarProperty Name="Proyecto" ColumnName="Proyecto" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="Configuracion" ColumnName="Configuracion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="IdUsuarioCierre" ColumnName="IdUsuarioCierre" />
+          <ScalarProperty Name="Cierre" ColumnName="Cierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPrototipoArchivos">
+      <EntityTypeMapping TypeName="PrototiposModel.tPrototipoArchivo">
+        <MappingFragment StoreEntitySet="tPrototipoArchivo">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdArch" ColumnName="IdArch" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="FechaAdd" ColumnName="FechaAdd" />
+          <ScalarProperty Name="UsuarioAdd" ColumnName="UsuarioAdd" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPruebas">
+      <EntityTypeMapping TypeName="PrototiposModel.tPrueba">
+        <MappingFragment StoreEntitySet="tPrueba">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+          <ScalarProperty Name="FechaRegistroPrueba" ColumnName="FechaRegistroPrueba" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Prueba" ColumnName="Prueba" />
+          <ScalarProperty Name="Deficiencia" ColumnName="Deficiencia" />
+          <ScalarProperty Name="BloqueoGrua" ColumnName="BloqueoGrua" />
+          <ScalarProperty Name="IdUsuarioBloqueoGrua" ColumnName="IdUsuarioBloqueoGrua" />
+          <ScalarProperty Name="SituacionBloqueoGrua" ColumnName="SituacionBloqueoGrua" />
+          <ScalarProperty Name="FechaDesbloqueoGrua" ColumnName="FechaDesbloqueoGrua" />
+          <ScalarProperty Name="FechaRegistroDesbloqueoGrua" ColumnName="FechaRegistroDesbloqueoGrua" />
+          <ScalarProperty Name="IdUsuarioDesbloqueoGrua" ColumnName="IdUsuarioDesbloqueoGrua" />
+          <ScalarProperty Name="RazonDesbloqueoGrua" ColumnName="RazonDesbloqueoGrua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPruebaAfectas">
+      <EntityTypeMapping TypeName="PrototiposModel.tPruebaAfecta">
+        <MappingFragment StoreEntitySet="tPruebaAfecta">
+          <ScalarProperty Name="IdDeficienciaPru" ColumnName="IdDeficienciaPru" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPruebaArchivos">
+      <EntityTypeMapping TypeName="PrototiposModel.tPruebaArchivo">
+        <MappingFragment StoreEntitySet="tPruebaArchivo">
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="IdArch" ColumnName="IdArch" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="FechaAdd" ColumnName="FechaAdd" />
+          <ScalarProperty Name="UsuarioAdd" ColumnName="UsuarioAdd" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSeguridads">
+      <EntityTypeMapping TypeName="PrototiposModel.tSeguridad">
+        <MappingFragment StoreEntitySet="tSeguridad">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdCheckList" ColumnName="IdCheckList" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="SeAcepta" ColumnName="SeAcepta" />
+          <ScalarProperty Name="item1" ColumnName="item1" />
+          <ScalarProperty Name="item2" ColumnName="item2" />
+          <ScalarProperty Name="item3" ColumnName="item3" />
+          <ScalarProperty Name="item4" ColumnName="item4" />
+          <ScalarProperty Name="item5" ColumnName="item5" />
+          <ScalarProperty Name="item6" ColumnName="item6" />
+          <ScalarProperty Name="item7" ColumnName="item7" />
+          <ScalarProperty Name="item8" ColumnName="item8" />
+          <ScalarProperty Name="item9" ColumnName="item9" />
+          <ScalarProperty Name="item10" ColumnName="item10" />
+          <ScalarProperty Name="item11" ColumnName="item11" />
+          <ScalarProperty Name="item12" ColumnName="item12" />
+          <ScalarProperty Name="item13" ColumnName="item13" />
+          <ScalarProperty Name="item14" ColumnName="item14" />
+          <ScalarProperty Name="item15" ColumnName="item15" />
+          <ScalarProperty Name="item16" ColumnName="item16" />
+          <ScalarProperty Name="prohib1" ColumnName="prohib1" />
+          <ScalarProperty Name="prohib2" ColumnName="prohib2" />
+          <ScalarProperty Name="prohib3" ColumnName="prohib3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.tSistema">
+        <MappingFragment StoreEntitySet="tSistema">
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tTratamientoPiezas">
+      <EntityTypeMapping TypeName="PrototiposModel.tTratamientoPieza">
+        <MappingFragment StoreEntitySet="tTratamientoPieza">
+          <ScalarProperty Name="IdPieza" ColumnName="IdPieza" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="Articulo" ColumnName="Articulo" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tUsuarios">
+      <EntityTypeMapping TypeName="PrototiposModel.tUsuario">
+        <MappingFragment StoreEntitySet="tUsuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_defPruebaUsuarios">
+      <EntityTypeMapping TypeName="PrototiposModel.v_defPruebaUsuario">
+        <MappingFragment StoreEntitySet="v_defPruebaUsuario">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="IdDeficiencia" ColumnName="IdDeficiencia" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="FechaCorta" ColumnName="FechaCorta" />
+          <ScalarProperty Name="UsuarioCreador" ColumnName="UsuarioCreador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Limitaciones" ColumnName="Limitaciones" />
+          <ScalarProperty Name="Bloqueo" ColumnName="Bloqueo" />
+          <ScalarProperty Name="UsuarioBloqueo" ColumnName="UsuarioBloqueo" />
+          <ScalarProperty Name="FechaDesbloqueo" ColumnName="FechaDesbloqueo" />
+          <ScalarProperty Name="FechaRegistroDesbloqueo" ColumnName="FechaRegistroDesbloqueo" />
+          <ScalarProperty Name="UsuarioDesbloqueo" ColumnName="UsuarioDesbloqueo" />
+          <ScalarProperty Name="RazonDesbloqueo" ColumnName="RazonDesbloqueo" />
+          <ScalarProperty Name="Resuelta" ColumnName="Resuelta" />
+          <ScalarProperty Name="FechaResolucion" ColumnName="FechaResolucion" />
+          <ScalarProperty Name="FechaRegistroResolucion" ColumnName="FechaRegistroResolucion" />
+          <ScalarProperty Name="UsuarioResolucion" ColumnName="UsuarioResolucion" />
+          <ScalarProperty Name="ObservacionesResolucion" ColumnName="ObservacionesResolucion" />
+          <ScalarProperty Name="tieneArchivos" ColumnName="tieneArchivos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_defUsuarios">
+      <EntityTypeMapping TypeName="PrototiposModel.v_defUsuario">
+        <MappingFragment StoreEntitySet="v_defUsuario">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="IdDeficiencia" ColumnName="IdDeficiencia" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="FechaCorta" ColumnName="FechaCorta" />
+          <ScalarProperty Name="UsuarioCreador" ColumnName="UsuarioCreador" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Limitaciones" ColumnName="Limitaciones" />
+          <ScalarProperty Name="Bloqueo" ColumnName="Bloqueo" />
+          <ScalarProperty Name="UsuarioBloqueo" ColumnName="UsuarioBloqueo" />
+          <ScalarProperty Name="FechaDesbloqueo" ColumnName="FechaDesbloqueo" />
+          <ScalarProperty Name="FechaRegistroDesbloqueo" ColumnName="FechaRegistroDesbloqueo" />
+          <ScalarProperty Name="UsuarioDesbloqueo" ColumnName="UsuarioDesbloqueo" />
+          <ScalarProperty Name="RazonDesbloqueo" ColumnName="RazonDesbloqueo" />
+          <ScalarProperty Name="Resuelta" ColumnName="Resuelta" />
+          <ScalarProperty Name="FechaResolucion" ColumnName="FechaResolucion" />
+          <ScalarProperty Name="FechaRegistroResolucion" ColumnName="FechaRegistroResolucion" />
+          <ScalarProperty Name="UsuarioResolucion" ColumnName="UsuarioResolucion" />
+          <ScalarProperty Name="ObservacionesResolucion" ColumnName="ObservacionesResolucion" />
+          <ScalarProperty Name="tieneArchivos" ColumnName="tieneArchivos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_faseAfectaSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_faseAfectaSistema">
+        <MappingFragment StoreEntitySet="v_faseAfectaSistema">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="IdDeficienciaFas" ColumnName="IdDeficienciaFas" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_faseDefSinResSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_faseDefSinResSistema">
+        <MappingFragment StoreEntitySet="v_faseDefSinResSistema">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="IdDeficienciaFas" ColumnName="IdDeficienciaFas" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_faseSinResSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_faseSinResSistema">
+        <MappingFragment StoreEntitySet="v_faseSinResSistema">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_faseUsuarios">
+      <EntityTypeMapping TypeName="PrototiposModel.v_faseUsuario">
+        <MappingFragment StoreEntitySet="v_faseUsuario">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdFase" ColumnName="IdFase" />
+          <ScalarProperty Name="EsInicial" ColumnName="EsInicial" />
+          <ScalarProperty Name="FechaInsercion" ColumnName="FechaInsercion" />
+          <ScalarProperty Name="FechaPuestaMarcha" ColumnName="FechaPuestaMarcha" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="ConfiguracionMontaje" ColumnName="ConfiguracionMontaje" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Deficiencia" ColumnName="Deficiencia" />
+          <ScalarProperty Name="DesmontajeFinal" ColumnName="DesmontajeFinal" />
+          <ScalarProperty Name="Desmontaje" ColumnName="Desmontaje" />
+          <ScalarProperty Name="FechaDesmontaje" ColumnName="FechaDesmontaje" />
+          <ScalarProperty Name="ObservacionesDesmontaje" ColumnName="ObservacionesDesmontaje" />
+          <ScalarProperty Name="UsuarioDesmontaje" ColumnName="UsuarioDesmontaje" />
+          <ScalarProperty Name="ObservacionesTratamiento" ColumnName="ObservacionesTratamiento" />
+          <ScalarProperty Name="tieneArchivos" ColumnName="tieneArchivos" />
+          <ScalarProperty Name="BloqueoGrua" ColumnName="BloqueoGrua" />
+          <ScalarProperty Name="UsuarioBloqueoGrua" ColumnName="UsuarioBloqueoGrua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_pruebaAfectaSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_pruebaAfectaSistema">
+        <MappingFragment StoreEntitySet="v_pruebaAfectaSistema">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="IdDeficienciaPru" ColumnName="IdDeficienciaPru" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_pruebaDefSinResSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_pruebaDefSinResSistema">
+        <MappingFragment StoreEntitySet="v_pruebaDefSinResSistema">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="IdDeficienciaPru" ColumnName="IdDeficienciaPru" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_pruebaSinResSistemas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_pruebaSinResSistema">
+        <MappingFragment StoreEntitySet="v_pruebaSinResSistema">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdSistema" ColumnName="IdSistema" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_pruebaUsSemanas">
+      <EntityTypeMapping TypeName="PrototiposModel.v_pruebaUsSemana">
+        <MappingFragment StoreEntitySet="v_pruebaUsSemana">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+          <ScalarProperty Name="FechaRegistroPrueba" ColumnName="FechaRegistroPrueba" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Prueba" ColumnName="Prueba" />
+          <ScalarProperty Name="Deficiencia" ColumnName="Deficiencia" />
+          <ScalarProperty Name="BloqueoGrua" ColumnName="BloqueoGrua" />
+          <ScalarProperty Name="UsuarioBloqueoGrua" ColumnName="UsuarioBloqueoGrua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_pruebaUsuarios">
+      <EntityTypeMapping TypeName="PrototiposModel.v_pruebaUsuario">
+        <MappingFragment StoreEntitySet="v_pruebaUsuario">
+          <ScalarProperty Name="IdPrototipo" ColumnName="IdPrototipo" />
+          <ScalarProperty Name="IdPrueba" ColumnName="IdPrueba" />
+          <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+          <ScalarProperty Name="FechaRegistroPrueba" ColumnName="FechaRegistroPrueba" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Prueba" ColumnName="Prueba" />
+          <ScalarProperty Name="Deficiencia" ColumnName="Deficiencia" />
+          <ScalarProperty Name="tieneArchivos" ColumnName="tieneArchivos" />
+          <ScalarProperty Name="BloqueoGrua" ColumnName="BloqueoGrua" />
+          <ScalarProperty Name="UsuarioBloqueoGrua" ColumnName="UsuarioBloqueoGrua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

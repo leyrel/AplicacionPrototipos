@@ -1,0 +1,41 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    int idProy = ViewBag.idProy;
+
+    WebGrid grid = new WebGrid(Model.PruebasBloq(idProy), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<div class="center">
+    <div class="title">
+        <h2>@ViewBag.Message6</h2>
+    </div>
+
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+
+            columns: new[] {
+                grid.Column("FechaPrueba", header: "Fecha", style: "fech"),
+                grid.Column("Usuario", header: "Usuario", style: "usCre"),
+                grid.Column("Prueba", header: "Actividad", style: "pro"),
+                grid.Column("", header: "Opciones", style: "opcDef", 
+                                format: @<text>
+                                            @Html.ActionLink("Editar", "EditarPrueba", new {id = item.IdPrueba})
+                                            |@Html.ActionLink("Desbloquear", "DesbloqueoGruaPrueba", new { id = item.IdPrueba })
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>

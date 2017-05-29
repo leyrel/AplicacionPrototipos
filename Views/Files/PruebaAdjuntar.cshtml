@@ -1,0 +1,49 @@
+﻿@model Prototipos.Models.ObjectManager.ArchivosPruManager
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Adjuntar archivos";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { Controller = "Home", id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { Controller = "Home", id = idProy })</li>
+</ul>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="center">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+        <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+        <h3>@ViewBag.Message3</h3>
+    </div>
+
+    <div>
+        @using (Html.BeginForm("PruebaAdjuntar", "Files",
+                            FormMethod.Post, new { id = "attachment", enctype = "multipart/form-data", encoding = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(x => Model.PruebaActual.IdPrueba)
+            <input type="file" name="uploadFile" id="uploadFile" />
+            <br /><br />
+            <div> Descripción: <i>(Hasta 50 caracteres)</i>
+            <br /><input type="text" style="width:26em" name="descrip" id="descrip"/></div>
+            <br /><br />
+            <input type="submit" value="Guardar"/>
+        }
+    </div>
+</div>
+
+<h5>
+    @Html.ActionLink("Atrás a elegir proyecto a gestionar", "Gestion", new { Controller = "Home" })
+    <span class="float-right">
+        @Html.ActionLink("Atrás a gestionar pruebas", "GestionPruebas", new { Controller = "Home", id = idProy })
+    </span>
+</h5>

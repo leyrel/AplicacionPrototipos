@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+        <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width" />
+        @Scripts.Render("~/bundles/jquery")
+    </head>
+    <body>
+        <div id="header">
+            <div class="content-wrapper">
+                <div id="login">
+                    @helper AccountName()
+                    {
+                        using (var context = new System.DirectoryServices.AccountManagement.PrincipalContext(System.DirectoryServices.AccountManagement.ContextType.Domain))
+                        {
+                            try
+                            {
+                                var principal = System.DirectoryServices.AccountManagement.UserPrincipal.FindByIdentity(context, User.Identity.Name);
+                                @String.Concat(principal.GivenName, " ", principal.Surname)
+                            }
+                            catch { }
+                        }
+                    }
+                    ¡Hola, @AccountName()!
+                </div>
+                <div class="logo">
+                    <br /><br /><br /><br />
+                </div>
+            </div>
+            <nav>
+                <ul id="menuIndex">
+                    <li class="selec">@Html.ActionLink("Principal", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Creación", "Creacion", "Home")</li>
+                    <li>@Html.ActionLink("Gestión", "Gestion", "Home")</li>
+                    <li>@Html.ActionLink("Cierre", "Cierre", "Home")</li>
+                    <li>@Html.ActionLink("Informes", "Informes", "Home")</li>
+                </ul>
+            </nav>
+            @RenderSection("scripts", required: false)
+        </div>
+        <div class="linea"> </div>
+        <div id="body">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+            <br /><br />
+        </div>
+        <div class="linea"></div>
+        <div id="footerIndex">
+            <br />
+            <br />
+        </div>
+    </body>
+</html>

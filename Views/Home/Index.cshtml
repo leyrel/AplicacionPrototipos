@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Aplicacion = "- Gestión, montaje y pruebas de prototipos -";
+    ViewBag.Title = "Menú principal";
+}
+
+<div class="center">
+    <h1>@ViewBag.Aplicacion</h1>
+</div>
+<h2>@ViewBag.Title</h2>
+
+<h3>Elija qué desea hacer:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>@Html.ActionLink("Creación", "Creacion", "Home")</h5>
+        Para crear un proyecto
+    </li>
+    <li class="two">
+        <h5>@Html.ActionLink("Gestión", "Gestion", "Home")</h5>
+        De proyectos abiertos
+    </li>
+    <li class="three">
+        <h5>@Html.ActionLink("Cierre", "Cierre", "Home")</h5>
+        Para cerrar un proyecto abierto
+    </li>
+    <li class="four">
+        <h5>@Html.ActionLink("Informes", "Informes", "Home")</h5>
+        De proyectos abiertos o cerrados
+    </li>
+</ol>

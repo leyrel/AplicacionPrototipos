@@ -1,0 +1,69 @@
+﻿@model Prototipos.Models.ObjectManager.ArchivosDefPruManager
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Archivos";
+    int idProy = ViewBag.idProy;
+    int idPrueba = ViewBag.idPrueba;
+    int idDefPru = ViewBag.idDefPru;
+    WebGrid grid = new WebGrid(Model.archDefPru(idDefPru), selectionFieldName: "selectedRow", rowsPerPage: 5);
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { Controller = "Home", id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { Controller = "Home", id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { Controller = "Home", id = idProy })</li>
+</ul>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="center">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+        <h2>@ViewBag.Message</h2>
+    </div>
+    <br />
+    <div id="myGrid">
+        @grid.GetHtml(
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.All,
+            rowStyle: "fila-normal",
+            alternatingRowStyle: "fila-alternativa",
+            selectedRowStyle: "fila-seleccionada",
+            tableStyle: "tabla-gridUsu",
+            headerStyle: "encabezado-grid",
+            footerStyle: "pie-grid",
+            firstText: "<< Primera",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Última >>",
+            columns: new[] {
+                grid.Column("Nombre", style: "descGrande", header: "Nombre"),
+                grid.Column("Descripcion", style: "descrip2", header: "Descripción"),
+                grid.Column("FechaAdd", style: "fech2", header: "Fecha"),
+                grid.Column("UsuarioAdd", style: "usUlt", header: "Usuario"),
+                grid.Column("", style: "centerOpc", header: "Opciones", 
+                                format: @<text>
+                                            @Html.ActionLink("Ver", "VerArchivoDefPru", new {Controller = "Files", id = item.IdArch})
+                                            | @Html.ActionLink("Eliminar", "EliminarArchivoDefPru", new {Controller = "Files", id = item.IdArch})
+                                        </text>)
+        })
+    </div>
+    <br />
+</div>
+
+<div class="center">
+    <a href="@Url.Action("DefPruAdjuntar", "Files", new { id = ViewBag.idDefPru })" class="button6">Adjuntar un archivo</a>
+</div>
+
+<h5>
+    @Html.ActionLink("Atrás a elegir proyecto a gestionar", "Gestion", new { Controller = "Home" })
+    <span class="float-right">
+        @Html.ActionLink("Atrás a deficiencias", "DefsPrueba", new { id = idPrueba })
+    </span>
+</h5>

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Deficiencia creada con éxito";
+    int idProy = ViewBag.idProy;
+    int idPrueba = ViewBag.idPrueba;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<br />
+<div class="center">
+    <div class="titleOk">
+        <h1>@ViewBag.Title</h1>
+    </div>
+</div>
+<br />
+<div class="message-aviso2">
+    @ViewBag.AvisoMessage
+</div>
+<br /><br />
+<div class="center">
+    <table id="tablaSin">
+        <tr>
+            <td>
+                <a href="@Url.Action("GestionPruebas", "Home", new { id = idProy })" class="button3">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Volver a gestión pruebas &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            </td>
+            <td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                <a href="@Url.Action("NuevaDefPrueba", "Home", new {id = idPrueba })" class="button3">&nbsp Añadir más deficiencias &nbsp</a>
+            </td>
+        </tr> 
+    </table>
+    <br /><br /><br />
+</div>

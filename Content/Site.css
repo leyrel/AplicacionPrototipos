@@ -1,0 +1,1172 @@
+﻿html {
+    /*background-color: #1C60AB;
+    background-color: #0d234f;    
+    background-color: #e2e2e2;*/
+    background-color: #fff;    
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    border-top: solid 10px #fff;
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #333;
+    outline: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
+}
+
+    a:link, a:visited,
+    a:active {
+        color: #333;
+    }
+
+    a:hover {
+        background-color: #c7d1d6;     
+        text-decoration: none;
+        color: #0d234f;
+    }
+
+#header, #footerIndex, .title,
+nav, section {
+    display: block;
+}
+
+mark {
+    background-color: #a6dbed;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.center 
+{
+    text-align: center;
+    position: relative;
+}
+
+.a-la-derecha
+{
+    text-align: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;   
+}
+
+.float-rightAbajo {
+    float: right;
+    margin-top: 2.2em;   
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+.h1Imp {
+    font-size: 1.7em;
+}
+
+.h2Imp {
+    font-size: 1.45em;
+}
+
+.h3Imp, .h3ImpArriba {
+    font-size: 1em;
+    margin-bottom: -0.8em;
+}
+
+.h3ImpArriba {
+    margin-top: 1.4em;
+}
+
+.h4Imp {
+    font-size: 0.9em;
+    margin-bottom: -1.5em;
+    margin-top: 1.7em;
+}
+
+.h4ImpBloq {
+    font-size: 0.9em;
+    margin-bottom: -1.5em;
+    margin-left: 4.5em;
+    margin-top: 1.8em;
+}
+
+/* main layout
+----------------------------------------------------------*/
+.content-wrapper {
+    margin: 0 auto;
+    width: 83%;
+}
+
+.header, #header 
+{
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+.header h1, #header h1 
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px;
+}
+
+#body 
+{
+    background-color: #e5edf4; /*Color azul clarito de fondo. Antes gris claro: #efeeef*/
+    clear: both;
+    padding-bottom: 35px;
+}
+
+    .main-content {
+        padding-left: 10px;
+        padding-top: 30px;
+    }
+
+#bodyImprimir 
+{
+    background-color: #fff; /*Color blanco de fondo*/
+    clear: both;
+    padding-bottom: 35px;
+}
+
+.linea
+{   
+    /*background-color: #e2e2e2;   
+    background-color: #1C60AB;*/
+    background-color: #0d234f;
+    height: 5px;
+}
+
+.lineaImprimir
+{   
+    background-color: #000;
+    height: 1px;
+    margin-top: -2.5em;
+}
+
+.subIndex
+{
+    background-color: #f7f9fb;
+    height: 28px;
+}
+
+ #footerIndex, #footerImprimir {
+    clear: both;
+    background-color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    color: #0d234f;
+}
+
+#footerIndex {
+    color: #0d234f;
+}
+
+#footerImprimir {
+    color: #000;
+}
+
+.comansa, .cece, .anmopyc
+{
+    border: 0;
+}
+
+.cece
+{
+    height: 16px;
+    width: 50px; 
+}
+
+.anmopyc
+{
+    height: 10px;
+    width: 98px; 
+}
+
+.rojo
+{
+    color: #e80c4d;
+    margin-bottom: -1.3em;
+}
+
+.menosMargen
+{
+    margin-bottom: -1em;
+    margin-top: 0.7em;   
+}
+
+/* Para no imprimir lo que se encuentre en el div class "float-right" (el botón) */
+@media print 
+{
+    .float-right
+    {
+        display:none;
+    }
+}
+/* site title
+----------------------------------------------------------*/
+.site-title {
+    color: #c8c8c8;
+    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+    font-size: 2.3em;
+    margin: 20px 0;
+}
+
+.site-title a, .site-title a:hover, .site-title a:active {
+    background: none;
+    color: #c8c8c8;
+    outline: none;
+    text-decoration: none;
+}
+
+/* login
+----------------------------------------------------------*/
+#login {
+    float: right;
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0px 0px;
+    text-align: right;
+    color: #0d234f;
+}
+
+/* menu
+----------------------------------------------------------*/
+ul#menuIndex{
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0;
+    margin-right: 8.5%;
+    text-align: right;
+    padding: 0 0 2px;
+}
+
+ul#menuSubIndex {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: -60px 0.2% 30px 0;
+    text-align: right;
+    padding: 0 0 2px;
+}
+
+    ul#menuIndex li, ul#menuSubIndex li {
+        display: inline;
+        list-style: none;
+        padding-left: 15px;
+    }
+
+        ul#menuIndex li a, ul#menuSubIndex li a {
+            background: none;
+            color: #999;
+            text-decoration: none;
+        }
+
+        ul#menuIndex li a:hover, ul#menuSubIndex li a:hover {
+            color: #0d234f;
+            text-decoration: none;
+        }
+
+        ul#menuIndex .selec a, ul#menuSubIndex .selec a {
+            color: #0d234f;
+        }
+        
+        ul#menuIndex .selec a:hover, ul#menuSubIndex .selec a:hover {
+            color: #999;
+        }
+
+/* page elements
+----------------------------------------------------------*/
+/* page titles */
+.title, titleOk, titleBloq {
+    margin-bottom: 10px;
+}
+
+.title h1, .title h2, .titleOk h1 {
+    display: inline;
+}
+
+.title h2 {
+    font-weight: normal;
+    margin-left: 3px;
+}
+
+.titleOk h1 {
+    color: #2db82d;
+}
+
+.titleBloq h2 {
+    font-weight: normal;
+}
+
+/* ordered list */
+ol.round {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+    ol.round li {
+        margin: 25px 0;
+        padding-left: 45px;
+    }
+
+        ol.round li.zero {
+            background: url("../Images/orderedList0.png") no-repeat;
+        }
+
+        ol.round li.one {
+            background: url("../Images/orderedList1.png") no-repeat;
+        }
+
+        ol.round li.two {
+            background: url("../Images/orderedList2.png") no-repeat;
+        }
+
+        ol.round li.three {
+            background: url("../Images/orderedList3.png") no-repeat;
+        }
+
+        ol.round li.four {
+            background: url("../Images/orderedList4.png") no-repeat;
+        }
+
+        ol.round li.five {
+            background: url("../Images/orderedList5.png") no-repeat;
+        }
+
+        ol.round li.six {
+            background: url("../Images/orderedList6.png") no-repeat;
+        }
+
+ol.letters 
+{
+    list-style-type: none;
+    padding-left: 0;
+  
+}
+
+    ol.letters li 
+    {
+        margin: 25px 0;
+        padding-left: 45px;
+        padding-bottom: 0.5em;
+        font-weight: bold;
+    }
+
+        ol.letters li.letraA
+        {
+            background: url("../Images/letraA.png") no-repeat;
+        }
+        
+        ol.letters li.letraB
+        {
+            background: url("../Images/letraB.png") no-repeat;
+        }
+        
+/* content */
+.article {
+    float: left;
+    width: 70%;
+}
+
+/*
+aside {
+    float: right;
+    width: 25%;
+}
+
+    aside ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        aside ul li {
+            background: url("../Images/bullet.png") no-repeat 0 50%;
+            padding: 2px 0 2px 20px;
+        }
+*/
+
+.label {
+    font-weight: 700;
+}
+
+/* contact */
+.contact h3 {
+    font-size: 1.2em;
+}
+
+.contact p {
+    margin: 5px 0 0 10px;
+}
+
+.contact iframe {
+    border: 1px solid #333;
+    margin: 5px 0 0 10px;
+}
+
+/* forms */
+fieldset {
+    border: none; /*border: 1px solid #000;*/
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+    fieldset legend {
+        display: none;
+    }
+    
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+        }
+
+    fieldset label {
+        display: block;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    fieldset label.checkbox {
+        display: inline;
+    }
+
+    /* Afecta a los campos de insertar fechas */
+    fieldset input[type="text"],
+    fieldset input[type="password"] 
+    {
+        background-color: #fff;
+        border: 1px solid #e2e2e2;
+        color: #333;
+        font-size: 1.2em;
+        margin: 5px 0 6px 0;
+        padding: 5px;
+        width: 95%;
+    }
+
+        fieldset input[type="text"]:focus,
+        fieldset input[type="password"]:focus 
+        {
+            background-color: #fff;
+            border: 1px solid #0d234f;
+        }
+    
+    fieldset input[type="submit"] {
+        border: 2px solid;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 5px;
+        text-align: center;
+        width: 10.8em;
+    }
+    
+    fieldset input[type="submit"]:hover 
+    {
+        background-color: #c7d1d6;
+        color: #0d234f;
+    }
+
+.fieldsetInterior, .fieldsetInteriorImp, .fieldsetInteriorPrueba, .fieldsetInteriorPruebaImp
+{ 
+    padding: 0 1.4em 0.5em 3em;
+    width: 100%;
+}
+
+.fieldsetInteriorMas, .fieldsetInteriorMasImp
+{ 
+    padding: 0 1.4em 0.5em 6em;
+    width: 100%;
+}
+
+.fieldsetInteriorPrueba 
+{ 
+    margin: 0 0 -0.5em 0;
+}
+
+.fieldsetInteriorImp, .fieldsetInteriorMasImp, .fieldsetInteriorPruebaImp
+{ 
+    margin: 0 0 0 0;
+}
+
+.fieldsetInteriorMas 
+{ 
+    margin: 0 0 1em 0;
+}
+
+.fieldsetInterior 
+{ 
+    margin: 0 0 1.5em 0;
+}
+
+.fieldsetSistemas
+{
+    width: 51%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+    .fieldsetInterior legend, .fieldsetInteriorImp legend, .fieldsetInteriorMas legend, .fieldsetInteriorMasImp legend, .fieldsetInteriorPrueba legend, .fieldsetSistemas legend
+    {
+        display: none;
+    }    
+    .fieldsetInterior label, .fieldsetInteriorImp label, .fieldsetInteriorMas label, .fieldsetInteriorMasImp label, .fieldsetInteriorPrueba label, .fieldsetSistemas label {
+        display: block;
+        font-size: 1em;
+        font-weight: 600;
+    }
+ 
+.scroll
+{
+    margin-top: -1.3em;
+    height: 175px;
+    overflow: auto; 
+}
+   
+.button, .button2, .button4, .button5, .button6, .button7
+{
+    background-color: #fff;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px;
+    text-align: center;
+    width: 9.5em;
+}
+
+.button
+{
+    float:left;
+    margin-left: 370px;
+    margin-top: -32px;
+}
+
+.button3
+{
+    background-color: #fff;
+    border: 2px solid;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+
+.button3:active
+{
+    background-color: #fff;
+}
+
+.button4
+{
+    border: 2px solid;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button5
+{
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 7em;
+}
+
+.button6
+{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.button7
+{
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+    
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.editor-field, .editor-ali, .editor-ali2, .editor-fecha, .editor-fieldOtros
+{
+    margin: 0.5em 0 0 0;
+}
+
+.editor-fieldOtros
+{
+    width: 52.5%;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-fecha
+{
+    width: 28.7%;    
+}
+
+.editor-titulo, .editor-tituloImp
+{
+    color: #000;
+    font-weight: bold;
+    margin: 2em 0 0 0;
+}
+
+.editor-tituloRojo
+{
+    color: #e80c4d;
+    font-weight: bold;
+    margin: 2em 0 0 0;
+}
+
+.editor-tituloImp, .editor-tituloImpAlto
+{
+    font-size: .80em;
+}
+
+.editor-tituloImpAlto
+{
+    color: #000;
+    font-weight: bold;
+    margin: 2em 0 -1em 0;
+}
+
+.editor-tituloSit
+{
+    color: #000;
+    font-weight: bold;
+    margin: 2em 0 -1.15em 0;
+}
+
+.editor-tituloAlto
+{
+    color: #000;
+    font-weight: bold;
+    margin: 1em 0 -1.15em 0;
+}
+
+.editor-tituloSiste, .editor-tituloSisteImp
+{
+    color: #000;
+    font-weight: bold;
+    margin: 2.8em 0 0 0;
+}
+
+.editor-tituloSisteRojo
+{
+    color: #e80c4d;
+    font-weight: bold;
+    margin: 2.8em 0 0 0;
+}
+
+.editor-tituloSisteImp
+{
+    font-size: .80em;
+}
+
+.editor-camp, .editor-campImp, .editor-campMenos, .editor-campImpMenos, .editor-campNegrita
+{
+    margin-bottom: -1.8em;
+    margin-top: -1.2em;
+}
+
+.editor-camp, .editor-campImp, .editor-campSiste, .editor-campSisteImp, .editor-campNegrita
+{
+    margin-left: 14.4em;
+}
+
+.editor-campNegrita
+{
+    font-weight: bold;
+}
+
+.editor-campMenos
+{
+    margin-left: 11.4em;
+}
+
+.editor-campImpMenos
+{
+    margin-left: 10.7em;
+}
+
+.editor-campImp, .editor-campImpMenos, .editor-campSitImp, .editor-campSitImp2, .editor-campSisteImp
+{
+    font-size: .80em;
+}
+
+.editor-campSit, .editor-campSit2, .editor-campSit3, .editor-campSitImp, .editor-campSitImp2, .editor-campSitInt
+{
+    margin-bottom: -1.15em;
+    margin-top: -1.4em;
+}
+
+.editor-campSiste, .editor-campSisteImp
+{
+    margin-bottom: -1em;
+    margin-top: -1.2em;
+}
+
+.editor-campSit 
+{
+    margin-left: 17.4em;
+    margin-bottom: -1.5em;
+}
+
+.editor-campSit2 
+{
+    margin-left: 22em;
+}
+
+.editor-campSit3  
+{
+    margin-left: 26em;
+}
+
+.editor-campSitInt
+{
+    margin-left: 20.5em;
+}
+
+.editor-campSitImp
+{
+    margin-left: 18em;
+    margin-bottom: -3em;
+}
+
+.editor-campSitImp2
+{
+    margin-left: 27em;
+}
+
+.editor-ali, .editor-ali2
+{
+    background-color: #cedbed;
+    border: 1px, solid, #000;
+    font-size: 1.2em;
+    padding: 0.2em 0.3em 0.3em 0.3em;
+    text-indent: 3px;
+}
+
+.editor-ali
+{
+    width: 95%;   
+}
+
+.editor-ali2
+{
+    margin-right: 11em; 
+}
+
+.sistemas
+{
+    margin-bottom: -1em;
+    margin-left: 6.1em;    
+}
+
+.sistemasImp
+{
+    font-size: .80em;
+    margin-bottom: -1em;
+    margin-left: 4.8em;    
+}
+
+.defsBloq
+{
+    margin-top: 0.4em;
+}
+
+.titulosBloq
+{
+    margin-bottom: -1em;
+    margin-left: 4.5em;
+    margin-top: 0.4em;
+}
+
+.arriba
+{
+    margin-bottom: -0.8em;
+    margin-top: 1.7em;
+}
+
+/* Para los cuadros editables de varias líneas (comentarios...) */
+.text-box.multi-line 
+{
+    background-color: #fff;
+    font-size: 1.2em;
+    height: 6.8em;
+    width: 95%;
+    padding: 5px;
+}
+/****************************************************************/
+
+/*Para los campos de fechas*/
+.text-box 
+{ 
+    color: #444;
+    font-size: 1.2em;
+    width: 50%;
+}
+
+/* Para los desplegables */
+.editor-field select
+{
+    color: #444;
+    font-size: 1.2em;
+    width: 51%;
+    padding: 5px;
+}
+
+.editor-field option
+{
+   width: 20.6em;
+}
+
+/* Info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    color: #e80c4d;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: -15px 0 10px 0;
+}
+
+.message-success, .message-success2
+{
+    color: #2db82d;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success2, .message-success3, .message-error, .message-aviso, .message-aviso2
+{
+    text-align: center;
+    position: relative;
+}
+
+.message-success3, .message-aviso
+{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.message-aviso2
+{
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.message-success3
+{
+    color: #2db82d;
+}
+
+.message-aviso
+{
+    color: #8B0000;
+}
+
+.error, .message-aviso2
+{
+    color: #e80c4d;
+}
+
+/* styles for validation helpers */
+.field-validation-error 
+{
+    font-weight: bold;
+}
+
+.field-validation-valid, .validation-summary-valid  {
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #cc0000; /*border: 1px solid #e80c4d;*/
+    background-color: #ffeeee;
+}
+
+input[type="text"].input-validation-error,
+input[type="password"].input-validation-error {
+    border: 1px solid #cc0000; /*border: 1px solid #e80c4d;*/
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors 
+{
+    background-color: #f4cccc;
+    font-weight: bold;
+}
+
+/* Para botones */
+input[type="submit"]:hover
+{
+    background-color: #fff;
+}
+    
+/* tables
+----------------------------------------------------------*/
+#tablaSin
+{
+    border: none;
+    margin: 0 auto;
+}
+
+#tablaSin td
+{
+    border: none;
+}
+
+/*
+table {
+    border-spacing: 0;
+    margin-top: 0.75em;
+    border: 0 none;
+}
+
+th {
+	font-size: 1.2em;
+    text-align: left;
+    border: none 0px;
+    padding-left: 0;
+}
+
+    th a {
+        display: block;
+        position: relative;
+        
+    }
+
+	th a:link, th a:visited, th a:active, th a:hover {
+		color: #333;
+		font-weight: 600;
+		text-decoration: none;
+        padding: 0;
+	}
+
+	th a:hover {
+		color: #0d234f;
+	}
+
+    th.asc a, th.desc a {
+        margin-right: .75em;
+    }
+    
+    th.asc a:after, th.desc a:after {
+		display: block;
+        position: absolute;
+        right: 0em;
+        top: 0;
+        font-size: 0.75em;
+	}
+
+	th.asc a:after {
+		content: '▲';
+	}
+
+	th.desc a:after {
+		content: '▼';
+	}
+
+td {
+    padding: 0.25em 2em 0.25em 0em;
+    border: 0 none;
+}
+
+tr.pager td {
+    padding: 0 0.25em 0 0;
+}*/
+
+/* TABLE GRID
+----------------------------------------------------------*/
+.tabla-grid 
+{
+    width: 50%;
+    margin: 0% 26%;
+    border: 2px solid #092D69;
+}
+
+.tabla-gridUsu
+{
+    width: 80%;
+    margin: 0% 0% 0% 10%;
+    border: 2px solid #092D69;
+}
+
+.tabla-gridPiezas
+{
+    width: 80%;
+    border: 2px solid #092D69;
+}
+
+tr.fila-normal
+{
+    background-color: #fff;
+}
+
+tr.fila-alternativa
+{    
+    background-color: #cedbed;
+}
+
+tr.fila-alternativa a:hover
+{
+    background-color: #fff;
+}
+
+tr.fila-seleccionada
+{
+    font-weight: bold;
+}
+
+tr.encabezado-grid th
+{
+    color: #fff;
+    text-align: center;
+    background-color: #092D69;
+}
+
+tr.encabezado-grid a
+{
+    color: #fff;
+}
+
+tr.encabezado-grid a:hover
+{
+    color: #fff;
+    background-color: #092D69;
+}
+
+tr.pie-grid td
+{
+    background-color: #092D69;
+    border-top: 1px solid black;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-top: 10px;
+}
+
+tr.pie-grid a
+{
+    color: #D1E0F6;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+tr.pie-grid a:hover
+{
+    color: #fff;
+    background-color: #092D69;
+}
+
+.opc, .fech
+{
+    width: 6em;
+}
+
+.fechCi
+{
+    width: 6.5em;
+}
+
+.usCre
+{
+    width: 7em;
+}
+
+.opcDef
+{
+    width: 9em;   
+}
+
+.opcArch
+{
+    width: 11em;   
+}
+
+.opcCi
+{
+    width: 13em;
+}
+
+.descrip
+{
+    width: 20em;
+}
+
+.pro
+{
+    width: 21em;
+}
+
+.descr
+{
+    width: 22em;
+}

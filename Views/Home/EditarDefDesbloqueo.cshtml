@@ -1,0 +1,152 @@
+﻿@model Prototipos.Models.ViewModels.EditarDefView
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Edición de la deficiencia";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+<br />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        @Html.HiddenFor(m => m.DeficienciaActual.IdPrototipo)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdFase)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdDeficiencia)
+        @Html.HiddenFor(m => m.DeficienciaActual.Fecha)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioCreador)
+        @Html.HiddenFor(m => m.DeficienciaActual.Bloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaDesbloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaRegistroDesbloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioDesbloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioBloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.RazonDesbloqueo)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaResolucion)
+        @Html.HiddenFor(m => m.DeficienciaActual.FechaRegistroResolucion)
+        @Html.HiddenFor(m => m.DeficienciaActual.IdUsuarioResolucion)
+        @Html.HiddenFor(m => m.DeficienciaActual.ObservacionesResolucion)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fecha)
+        </div>
+        <div class="editor-ali">
+            @Html.DisplayFor(model => model.Fecha, "ShortDateTime")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdUsuarioCreador)
+        </div>
+        <div class="editor-ali">
+            @ViewBag.usCreador
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Limitaciones)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Limitaciones)
+            @Html.ValidationMessageFor(model => model.Limitaciones)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Sistema al que afecta:")
+        </div>
+        <div><i>Elegir al menos un limitador y/o sistema de seguridad de la grúa</i></div>
+        <br />
+        <fieldset class="fieldsetSistemas">
+            <br />
+            <div class="scroll">
+                @foreach (var sist in Model.tSistemas)
+                {
+                    if (Model.ExisteFaseAfecta(Model.DeficienciaActual.IdDeficiencia, sist.IdSistema))
+                    {
+                        <div><input type="checkbox" name="selectedSistemas" value="@sist.IdSistema" checked="checked"/>@sist.Nombre</div>
+                    }
+                    else
+                    {
+                        <div><input type="checkbox" name="selectedSistemas" value="@sist.IdSistema"/>@sist.Nombre</div>  
+                    }
+                }
+            </div> 
+        </fieldset>
+        <br />
+        <div class="otros"><i>Si se ha elegido la opción <b>otros</b>, especificar aquí:</i></div>
+        <div class="editor-fieldOtros">
+            @if (Model.ExisteFaseOtros(Model.DeficienciaActual.IdDeficiencia))
+            {
+                <input type="text" name="Otros" value="@ViewBag.otros"/>
+            }
+            else
+            {
+                @Html.EditorFor(model => model.Otros)  
+            }
+
+            @Html.ValidationMessageFor(model => model.Otros)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bloqueo)
+        </div>
+        @if (Model.Bloqueo == true)
+        {
+            <div class="editor-ali">
+                @ViewBag.Bloqueo
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IdUsuarioBloqueo)
+            </div>
+            <div class="editor-ali">
+                @ViewBag.usBloqueo
+            </div>
+        }
+        else
+        {
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Bloqueo, "BloqueoDropDown")
+            </div>
+        }
+        <br />
+        <p>
+            <input type="submit" value="Editar" />
+        </p>
+    </fieldset>
+}
+<br />
+<br />
+<h5>
+    @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    <span class="float-right">
+        @Html.ActionLink("Atrás a desbloqueo", "Desbloqueo", new { id = idProy })
+    </span>
+</h5>
+

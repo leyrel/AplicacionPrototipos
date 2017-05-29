@@ -1,0 +1,53 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "Montaje";
+    int idProy = ViewBag.idProy;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Inicio gestión proyecto", "GestionProyecto", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li>@Html.ActionLink("Puesta en marcha inicial", "MarchaInicial", new { id = idProy })</li>
+    <li>@Html.ActionLink("Nuevas derivadas", "MarchaDerivadas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desmontaje", "Desmontaje", new { id = idProy })</li>
+</ul>
+<div class="message-success3">
+    @ViewBag.SuccessMessage
+</div>
+<div class="message-error">
+    @ViewBag.ErrorMessage
+</div>
+<br />
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i></h2>
+</div>
+
+<h3>Elija qué desea hacer:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Puesta en marcha</h5>
+        <ol class="letters">
+            <li class="letraA">@Html.ActionLink("Puesta en marcha inicial", "MarchaInicial", new { id = idProy })</li>
+            <li class="letraB">@Html.ActionLink("Puesta en marcha nuevas derivadas", "MarchaDerivadas", new { id = idProy })</li>
+        </ol>
+    </li>
+    <li class="two">
+        <h5>@Html.ActionLink("Desmontaje", "Desmontaje", new { id = idProy })</h5>
+        <br />
+    </li>
+</ol>
+<br />
+<br />
+
+@{Html.RenderPartial("~/Views/Files/FasesProyecto.cshtml");}
+
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a proyecto", "GestionProyecto", new { id = idProy })
+    </span>
+</h5>

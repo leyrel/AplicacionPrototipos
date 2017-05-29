@@ -1,0 +1,571 @@
+﻿@model Prototipos.Models.ObjectManager.ProyectosManager
+
+@{
+    Layout = "~/Views/Shared/_Layout4.cshtml";
+    ViewBag.Title = "Informe";
+
+    int i = 1;
+    int f = 1;
+    int g = 1;
+    string si = "Sí";
+    string no = "No";
+}
+
+<div class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message <i>@ViewBag.Message2</i> @ViewBag.Message3</h2>
+</div>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    <fieldset>
+        
+        @Html.HiddenFor(m => m.ProyectoActual.IdPrototipo)
+
+        <h3>Creación:</h3>
+        <div class="editor-tituloAlto">
+            @Html.LabelFor(model => model.ProyectoActual.FechaCreacion, "Fecha: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.FechaCreacion, "ShortDateTime") - @ViewBag.creador
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Proyecto, "Proyecto: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Proyecto)
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Descripcion, "Descripción: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Descripcion)
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Responsable, "Responsable: ")
+        </div>
+        <div class="editor-camp">
+            @ViewBag.responsable
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Configuracion, "Configuración: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Configuracion)
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Observaciones, "Observaciones: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Observaciones)
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Estado, "Estado: ")
+        </div>
+        <div class="editor-camp">
+            @ViewBag.estado
+        </div>
+        <div class="editor-titulo">
+            @Html.Label("Archivos adjuntos: ")
+        </div>
+        @if (Model.TieneArchProy(Model.ProyectoActual.IdPrototipo))
+        {
+            <div class="editor-camp">
+                Sí -> <a href="@Url.Action("GestionProyecto", "Home", new { id = Model.ProyectoActual.IdPrototipo })"  target="_blank" class="button7">Ver archivos</a> 
+            </div>
+        }
+        else
+        {
+            <div class="editor-camp">
+                No
+            </div>
+        }
+        <br />
+
+        <h3>Puestas en marcha:</h3>
+        @foreach (var fas in Model.v_faseUsuarios)
+        {
+            if (fas.IdPrototipo == Model.ProyectoActual.IdPrototipo)
+            {
+                <fieldset class="fieldsetInterior">
+                    <h4>@fas.EsInicial</h4>
+                    <div class="editor-tituloAlto">
+                        @Html.Label("Puesta en marcha: ")
+                    </div>
+                    <div class="editor-camp">
+                        @fas.FechaPuestaMarcha - @fas.Usuario
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Configuración de montaje: ")
+                    </div>
+                    <div class="editor-camp">
+                        @fas.ConfiguracionMontaje
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Observaciones: ")
+                    </div>
+                    <div class="editor-camp">
+                        @fas.Observaciones
+                    </div>
+                    @if (fas.BloqueoGrua == "Sí" && fas.UsuarioBloqueoGrua != null)
+                    {
+                        <div class="editor-tituloRojo">
+                            @Html.Label("Bloquea la KX1953: ")
+                        </div>
+                        <div class="editor-camp">
+                            @fas.BloqueoGrua - Por: @fas.UsuarioBloqueoGrua
+                        </div>
+                    }
+                    @if (fas.BloqueoGrua == "No" && fas.UsuarioBloqueoGrua != null)
+                    {
+                        <div class="editor-titulo">
+                            @Html.Label("Bloquea la KX1953: ")
+                        </div>
+                        <div class="editor-camp">
+                            @fas.BloqueoGrua - Con anterioridad por: @fas.UsuarioBloqueoGrua
+                        </div>
+                    }
+                    @if (fas.BloqueoGrua == "No" && fas.UsuarioBloqueoGrua == null)
+                    {
+                        <div class="editor-titulo">
+                            @Html.Label("Bloquea la KX1953: ")
+                        </div>
+                        <div class="editor-camp">
+                            @fas.BloqueoGrua
+                        </div>
+                    }
+                    <div class="editor-titulo">
+                        @Html.Label("Desmontaje: ")
+                    </div>
+                    <div class="editor-camp">
+                        @fas.FechaDesmontaje - @fas.UsuarioDesmontaje
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Desmontaje final: ")
+                    </div>
+                    <div class="editor-camp">
+                        @if (fas.DesmontajeFinal == true)
+                        {
+                            @si   
+                        }
+                        @if (fas.DesmontajeFinal == false)
+                        {
+                            @no  
+                        }
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Observaciones desmontaje: ")
+                    </div>
+                    <div class="editor-camp">
+                        @fas.ObservacionesDesmontaje
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Observaciones tratamiento: ")
+                    </div>
+                    <div class="editor-camp">
+                        @fas.ObservacionesTratamiento
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Archivos adjuntos: ")
+                    </div>
+                    @if (Model.TieneArchFase(fas.IdFase))
+                    {
+                        <div class="editor-camp">
+                            Sí -> <a href="@Url.Action("MontajeArchivos", "Files", new { id = fas.IdFase })"  target="_blank" class="button7">Ver archivos</a> 
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="editor-camp">
+                            No
+                        </div>
+                    }
+                    @if (Model.TieneTratPiezas(fas.IdFase))
+                    {
+                        <br />
+                        <h4>Tratamiento piezas:</h4>
+                        foreach (var pieza in Model.tTratamientoPiezas)
+                        {
+                            if (pieza.IdFase == fas.IdFase)
+                            {
+                                <fieldset class="fieldsetInterior">
+                                    <h4>Pieza @g</h4>
+                                    @{g++;}
+                                    <div class="editor-tituloAlto">
+                                        @Html.Label("Artículo: ")
+                                    </div>
+                                    <div class="editor-campMenos">
+                                        @pieza.Articulo
+                                    </div>
+                                    <div class="editor-titulo">
+                                        @Html.Label("Acción: ")
+                                    </div>
+                                    <div class="editor-campMenos">
+                                        @pieza.Accion
+                                    </div>
+                                    <br />
+                                </fieldset>
+                            }
+                            g = 1;
+                        }
+                    }
+                    @if (Model.TieneDefFase(fas.IdFase))
+                    {
+                        <br />
+                        <h4>Deficiencias:</h4>
+                        foreach (var def in Model.v_defUsuarios)
+                        {
+                            if (def.IdPrototipo == Model.ProyectoActual.IdPrototipo && fas.IdFase == def.IdFase)
+                            {
+                                <fieldset class="fieldsetInterior">
+                                    <h4>Deficiencia @f</h4>
+                                    @{f++;}
+                                    <div class="editor-tituloAlto">
+                                        @Html.Label("Creación: ")
+                                    </div>
+                                    <div class="editor-camp">
+                                        @def.Fecha - @def.UsuarioCreador
+                                    </div>
+                                    <div class="editor-titulo">
+                                        @Html.Label("Descipción: ")
+                                    </div>
+                                    <div class="editor-camp">
+                                        @def.Descripcion
+                                    </div>
+                                    <div class="editor-titulo">
+                                        @Html.Label("Limitaciones: ")
+                                    </div>
+                                    <div class="editor-camp">
+                                        @def.Limitaciones
+                                    </div>
+                                    <div class="editor-tituloSiste">
+                                        @Html.Label("Sistemas a los que afecta: ")
+                                    </div>
+                                    <div class="editor-campSiste">
+                                        @foreach (var sist in Model.v_faseAfectaSistema)
+                                        {
+                                            if (sist.IdDeficienciaFas == def.IdDeficiencia)
+                                            {
+                                                if (@sist.Nombre == "Otros (especificar)")
+                                                {
+                                                    <div>Otros: @sist.Otros</div>
+                                                }
+                                                else
+                                                {
+                                                    @sist.Nombre<br />
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                    @if (def.Bloqueo == "Sí" && def.UsuarioBloqueo != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Bloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.Bloqueo - Por: @def.UsuarioBloqueo
+                                        </div>
+                                    }
+                                    @if (def.Bloqueo == "No" && def.UsuarioBloqueo != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Bloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.Bloqueo - Con anterioridad por: @def.UsuarioBloqueo
+                                        </div>
+                                    }
+                                    @if (def.Bloqueo == "No" && def.UsuarioBloqueo == null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Bloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.Bloqueo
+                                        </div>
+                                    }
+                                    @if (def.FechaDesbloqueo != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Desbloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.FechaDesbloqueo - @def.UsuarioDesbloqueo
+                                        </div>
+                                        <div class="editor-titulo">
+                                            @Html.Label("Razon desbloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.RazonDesbloqueo
+                                        </div>
+                                    }
+                                    @if (def.FechaResolucion != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Resolución: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.FechaResolucion - @def.UsuarioResolucion
+                                        </div>
+                                        <div class="editor-titulo">
+                                            @Html.Label("Observaciones resolución: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @def.ObservacionesResolucion
+                                        </div>
+                                    }
+                                    <div class="editor-titulo">
+                                        @Html.Label("Archivos adjuntos: ")
+                                    </div>
+                                    @if (Model.TieneArchDefFase(def.IdDeficiencia))
+                                    {
+                                        <div class="editor-camp">
+                                            Sí -> <a href="@Url.Action("DefArchivos", "Files", new { id = def.IdDeficiencia })"  target="_blank" class="button7">Ver archivos</a> 
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="editor-camp">
+                                            No
+                                        </div>
+                                    }
+                                </fieldset>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <br />
+                        <h4>Deficiencias:</h4>
+                        <div class="editor-camp">
+                            @fas.Deficiencia tiene
+                        </div>
+                    }
+                    @{f = 1;}
+                </fieldset>
+            }
+        }
+        <h3>Gestión de pruebas:</h3>
+        @foreach (var pru in Model.v_pruebaUsuarios)
+        {
+            if (pru.IdPrototipo == Model.ProyectoActual.IdPrototipo)
+            {
+                <fieldset class="fieldsetInteriorPrueba">
+                    <h4>Prueba @i</h4>
+                    
+                    <div class="editor-tituloAlto">
+                        @Html.Label("Fecha: ")
+                    </div>
+                    <div class="editor-camp">
+                        @pru.FechaPrueba - @pru.Usuario
+                    </div>
+                    <div class="editor-titulo">
+                        @Html.Label("Actividad realizada: ")
+                    </div>
+                    <div class="editor-camp">
+                        @pru.Prueba
+                    </div>
+                    @if (pru.BloqueoGrua == "Sí" && pru.UsuarioBloqueoGrua != null)
+                    {
+                        <div class="editor-titulo">
+                            @Html.Label("Bloquea la KX1953: ")
+                        </div>
+                        <div class="editor-camp">
+                            @pru.BloqueoGrua - Por: @pru.UsuarioBloqueoGrua
+                        </div>
+                    }
+                    @if (pru.BloqueoGrua == "No" && pru.UsuarioBloqueoGrua != null)
+                    {
+                        <div class="editor-titulo">
+                            @Html.Label("Bloquea la KX1953: ")
+                        </div>
+                        <div class="editor-camp">
+                            @pru.BloqueoGrua - Con anterioridad por: @pru.UsuarioBloqueoGrua
+                        </div>
+                    }
+                    @if (pru.BloqueoGrua == "No" && pru.UsuarioBloqueoGrua == null)
+                    {
+                        <div class="editor-titulo">
+                            @Html.Label("Bloquea la KX1953: ")
+                        </div>
+                        <div class="editor-camp">
+                            @pru.BloqueoGrua
+                        </div>
+                    }
+                    <div class="editor-titulo">
+                        @Html.Label("Archivos adjuntos: ")
+                    </div>
+                    @if (Model.TieneArchPrueba(pru.IdPrueba))
+                    {
+                        <div class="editor-camp">
+                            Sí -> <a href="@Url.Action("PruebaArchivos", "Files", new { id = pru.IdPrueba })"  target="_blank" class="button7">Ver archivos</a> 
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="editor-camp">
+                            No
+                        </div>
+                    }
+                    <br />
+                    @if (Model.TieneDefPrueba(pru.IdPrueba))
+                    {
+                        <h4>Deficiencias:</h4>
+                        foreach (var defPru in Model.v_defPruebaUsuarios)
+                        {
+                            if (defPru.IdPrototipo == Model.ProyectoActual.IdPrototipo && pru.IdPrueba == defPru.IdPrueba)
+                            {
+                                <fieldset class="fieldsetInterior">
+                                    @if (defPru.FechaResolucion == null)
+                                    {
+                                        <h4 class='menosMargen'>Deficiencia @i .@f - Deficiencia sin resolver</h4>
+                                        f++;
+                                    }
+                                    else
+                                    {
+                                        <h4 class='menosMargen'>Deficiencia @i .@f - Deficiencia resuelta</h4>
+                                        f++;
+                                    }
+                                    <div class="editor-titulo">
+                                        @Html.Label("Creación: ")
+                                    </div>
+                                    <div class="editor-camp">
+                                        @defPru.Fecha - @defPru.UsuarioCreador
+                                    </div>
+                                    <div class="editor-titulo">
+                                        @Html.Label("Descipción: ")
+                                    </div>
+                                    <div class="editor-camp">
+                                        @defPru.Descripcion
+                                    </div>
+                                    <div class="editor-titulo">
+                                        @Html.Label("Limitaciones: ")
+                                    </div>
+                                    <div class="editor-camp">
+                                        @defPru.Limitaciones
+                                    </div>
+                                    <div class="editor-tituloSiste">
+                                        @Html.Label("Sistemas a los que afecta: ")
+                                    </div>
+                                    <div class="editor-campSiste">
+                                        @foreach (var sist in Model.v_pruebaAfectaSistema)
+                                        {
+                                            if (sist.IdDeficienciaPru == defPru.IdPrueba)
+                                            {
+                                                @sist.Nombre<br />
+                                            }
+                                        }
+                                    </div>
+                                    @if (defPru.Bloqueo == "Sí" && defPru.UsuarioBloqueo != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Bloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.Bloqueo - Por: @defPru.UsuarioBloqueo
+                                        </div>
+                                    }
+                                    @if (defPru.Bloqueo == "No" && defPru.UsuarioBloqueo != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Bloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.Bloqueo - Con anterioridad por: @defPru.UsuarioBloqueo
+                                        </div>
+                                    }
+                                    @if (defPru.Bloqueo == "No" && defPru.UsuarioBloqueo == null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Bloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.Bloqueo
+                                        </div>
+                                    }
+                                    @if (defPru.FechaDesbloqueo != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Desbloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.FechaDesbloqueo - @defPru.UsuarioDesbloqueo
+                                        </div>
+                                        <div class="editor-titulo">
+                                            @Html.Label("Razon desbloqueo: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.RazonDesbloqueo
+                                        </div>
+                                    }
+                                    @if (defPru.FechaResolucion != null)
+                                    {
+                                        <div class="editor-titulo">
+                                            @Html.Label("Resolución: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.FechaResolucion - @defPru.UsuarioResolucion
+                                        </div>
+                                        <div class="editor-titulo">
+                                            @Html.Label("Observaciones resolución: ")
+                                        </div>
+                                        <div class="editor-camp">
+                                            @defPru.ObservacionesResolucion
+                                        </div>
+                                    }
+                                    <div class="editor-titulo">
+                                        @Html.Label("Archivos adjuntos: ")
+                                    </div>
+                                    @if (Model.TieneArchDefPru(defPru.IdDeficiencia))
+                                    {
+                                        <div class="editor-camp">
+                                            Sí -> <a href="@Url.Action("DefPruArchivos", "Files", new { id = defPru.IdDeficiencia })"  target="_blank" class="button7">Ver archivos</a> 
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="editor-camp">
+                                            No
+                                        </div>
+                                    }
+                                </fieldset>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <h4>Deficiencias:</h4>
+                        <div class="editor-camp">
+                            @pru.Deficiencia tiene
+                        </div>
+                        <br />
+                    }
+                    @{i++; f = 1;}
+                </fieldset>
+            }
+
+        }
+        <h3>Cierre:</h3>
+        <div class="editor-tituloAlto">
+            @Html.LabelFor(model => model.ProyectoActual.FechaCierre, "Fecha: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.FechaCierre, "ShortDateTime") - @ViewBag.usCierre
+        </div>
+        <div class="editor-titulo">
+            @Html.LabelFor(model => model.ProyectoActual.Cierre, "Observaciones cierre: ")
+        </div>
+        <div class="editor-camp">
+            @Html.DisplayFor(model => model.ProyectoActual.Cierre)
+        </div>
+        <br />
+    </fieldset>
+    <br /><br />
+
+<h5>
+    @Html.ActionLink("Ir a principal", "Index")
+    <span class="float-right">
+        @Html.ActionLink("Atrás a elegir proyecto para informe", "Informes")
+    </span>
+</h5>

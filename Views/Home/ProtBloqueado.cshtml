@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+    ViewBag.Title = "El prototipo está bloqueado por esta deficiencia";
+    int idProy = ViewBag.idProy;
+    int idDef = ViewBag.idDeficiencia;
+}
+
+<ul id="menuSubIndex">
+    <li>@Html.ActionLink("Montaje", "Montaje", new { id = idProy })</li>
+    <li class="selec">@Html.ActionLink("Resolución", "Resolucion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Gestión pruebas", "GestionPruebas", new { id = idProy })</li>
+    <li>@Html.ActionLink("Situación", "Situacion", new { id = idProy })</li>
+    <li>@Html.ActionLink("Tratamiento", "Tratamiento", new { id = idProy })</li>
+    <li>@Html.ActionLink("Desbloqueo", "Desbloqueo", new { id = idProy })</li>
+</ul>
+<br />
+<div class="center">
+    <div class="titleBloq">
+        <h1>@ViewBag.Title</h1>
+        <h2>@ViewBag.Message</h2>
+    </div>
+</div>
+<br />
+<br /><br />
+<div class="center">
+    <table id="tablaSin">
+        <tr>
+            <td>
+                <a href="@Url.Action("DesbloqueoDef", "Home", new { id = idDef })" class="button4">&nbsp&nbsp&nbsp Sí &nbsp&nbsp&nbsp&nbsp</a>
+            </td>
+            <td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                <a href="@Url.Action("Resolucion", "Home", new {id = idProy })" class="button4">&nbsp&nbsp&nbsp No&nbsp&nbsp&nbsp</a>
+            </td>
+        </tr> 
+    </table>
+    <br /><br /><br />
+</div>
