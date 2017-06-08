@@ -325,8 +325,8 @@
     <Content Include="Views\Files\DefArchivos.cshtml" />
     <Content Include="Views\Files\EliminarArchivoProy.cshtml" />
     <Content Include="Views\Files\EliminarArchivoDef.cshtml" />
-    <Content Include="Views\Files\EditarDefsPrueba.cshtml" />
-    <Content Include="Views\Files\EditarDefsFase.cshtml" />
+    <Content Include="Views\Files\EditarDefPrueba.cshtml" />
+    <Content Include="Views\Files\EditarDefFase.cshtml" />
     <Content Include="Views\Files\DefsPrueba.cshtml" />
     <Content Include="Views\Files\DefsFase.cshtml" />
     <Content Include="Views\Files\DefPruArchivos.cshtml" />
